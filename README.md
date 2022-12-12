@@ -1,2 +1,2 @@
 # Salvator
-Your medical records o the go
+Your medical records on the go
