@@ -5,7 +5,7 @@ import sqlalchemy
 from sqlalchemy import String, Integer, Column, ForeignKey, Float
 
 
-class UserMedInfo:
+class UserMedInfo(BaseModel, Base):
     """contains the biodata of a user
     first_name, Last_name, age, weight, height, genotype, blood-group
     """
