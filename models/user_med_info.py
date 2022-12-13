@@ -10,11 +10,12 @@ class UserMedInfo(BaseModel, Base):
     first_name, Last_name, age, weight, height, genotype, blood-group
     """
     __tablename__ = 'biodata'
+    med_id = Column(String(70), ForeignKey('login.id'), nullable=False)
     first_name = Column(String(75), nullable=False)
     last_name = Column(String(75), nullable=False)
     genotype = Column(String(4), nullable=False)
     blood_group = Column(String(2), nullable=False)
-    age = Column(Integer, nulable=False)
+    age = Column(Integer, nullable=False)
     height = Column(Float, nullable=True)
-    weight = Cloumn(Float, nullable=True)
-
+    weight = Column(Float, nullable=True)
+    allergies = Column(String(450), nullable=True) 
