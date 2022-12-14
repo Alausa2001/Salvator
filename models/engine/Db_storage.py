@@ -54,6 +54,12 @@ class DbStorage:
         if obj is not None:
             self.__session.delete(obj)
 
+    def get_user(self, user, pwd, cls=UserLogin):
+        """returns a user with password"""
+        if cls == UserLogin:
+            user = self.__session.query(cls).filter(cls.password == pwd).filter(cls.username == user).first()
+        return user
+
     def get(self, cls, id):
         """return and object with a id"""
         if cls is not None:
