@@ -33,6 +33,8 @@ def register():
         response.status_code = 400
         return response
     else:
-        redirect(url_for("app_views.login"))
+        # redirect(url_for("app_views.login"))
+        pass
+
 
 
