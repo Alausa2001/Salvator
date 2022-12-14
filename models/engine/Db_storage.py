@@ -40,7 +40,7 @@ class DbStorage:
         Base.metadata.create_all(self.__engine)
         sess_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(sess_factory)
-        self.__session = Session()
+        self.__session = Session
 
     def new(self, obj):
         """adds and commit chab=nges to the database"""
