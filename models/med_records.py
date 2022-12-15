@@ -9,9 +9,9 @@ class Records(BaseModel, Base):
     """contains the medical records of a user"""
     __tablename__ = "records"
     records_id = Column(String(70), ForeignKey('login.id'), nullable=False)
-    date = Column(String(40), nullable=True)
+    date = Column(String(40), nullable=False)
     diagnosis = Column(String(450), nullable=False)
-    prescription = Column(String(450), nullable=True)
+    prescription = Column(String(450), nullable=False)
     hospital = Column(String(450), nullable=True)
     doctor_name = Column(String(450), nullable=True)
     doctor_contact = Column(String(450), nullable=True)
