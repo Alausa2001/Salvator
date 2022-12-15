@@ -11,4 +11,4 @@ class UserLogin(BaseModel, Base):
     #  user_id = Column(Integer, primary_key=True, nullable=False)
     username = Column(String(20), nullable=False)
     password = Column(String(256), nullable=False)
-    users = relationship('Records', cascade='all, delete-orphan', backref='records')
+    records = relationship('Records', cascade='all, delete-orphan', backref='user')

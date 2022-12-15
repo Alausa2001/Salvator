@@ -69,6 +69,16 @@ class DbStorage:
             return None
         return None
 
+    def get_record(self, records_id, cls):
+        """return a user's medical records"""
+        if cls is not None:
+            obj = self.__session.query(cls).where(cls.records_id == records_id).first()
+            if obj:
+                return obj
+            return None
+        return None
+
+
     def get(self, cls, id):
         """return and object with a id"""
         if cls is not None:

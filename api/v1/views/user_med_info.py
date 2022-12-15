@@ -5,6 +5,13 @@ from models.login import UserLogin
 from models.user_med_info import UserMedInfo
 from api.v1.views import app_views
 
+@app_views.route('/users', methods=['GET'], strict_slashes=False)
+def all_users():
+    """returns all users"""
+    users = []
+    for user in storage.all("UserLogin").values():
+        users.append(user.to_dict())
+    return jsonify(users)
 
 @app_views.route('/biodata/<username>', methods=['POST'], strict_slashes=False)
 def input_biodata(username):
