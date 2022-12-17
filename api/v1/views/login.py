@@ -3,6 +3,9 @@ from models import storage
 from models.login import UserLogin
 from api.v1.views import app_views
 from flask import abort, make_response, request, redirect, jsonify
+from models.med_records import Records
+from models.user_med_info import UserMedInfo
+
 
 @app_views.route('/register', methods=['GET', 'POST'], strict_slashes=False)
 def register():
@@ -36,5 +39,35 @@ def register():
         # redirect(url_for("app_views.login"))
         pass
 
+@app_views.route('/login', methods=['POST'], strict_slashes=False)
+def login():
+    """return users details (biodata and medical records), when they login"""
+    login_details = request.get_json(silent=True)
+    if type(login_details) is not dict:
+        return jsonify("Not a JSON")
+    username = login_details.get('username')
+    password = login_details.get('password')
+    user = storage.get_user(username, UserLogin)
+    if not user:
+        return jsonify("User does not exists")
+    if password != user.password:
+        return jsonify("Wrong password")
 
+    # get a user's biodata
+    med_id = user.id
+    user_biodata = storage.get_biodata(med_id, UserMedInfo)
+    if not user_biodata:
+        user_biodata = {"alert" : "You are yet to fill in your biodata"}
+    if type(user_biodata) is not dict:
+        biodata = user_biodata.to_dict()
 
+    # """get a user's medical records"""
+    all_records = []
+    user_id = user.id
+    records = storage.get_record(user_id, Records)
+    if not records:
+        all_records = {"alert": "You have no saved biodata"}
+    if type(all_records) is not dict:
+        for record in user.records:
+            all_records.append(record.to_dict())
+    return jsonify({"biodata": biodata, "medical_records": all_records})
