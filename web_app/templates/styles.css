@@ -116,6 +116,21 @@ section {
   border-radius: 10px;
 }
 
+/* Login */
+.login_container {
+  height: 600px;
+  width: 100%;
+  margin: 0 auto;
+  /* background: url("images/img_6.jpg") no-repeat; */
+  background-size: 100% 100%;
+}
+.login_wrapper {
+  width: 60%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.250);
+  border-radius: 10px;
+}
+
 /* Frames  */
 .card {
     flex: 1;
