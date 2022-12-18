@@ -117,22 +117,72 @@ section {
 }
 
 /* Login */
-.login_container {
+.container {
   height: 600px;
   width: 100%;
   margin: 0 auto;
-  /* background: url("images/img_6.jpg") no-repeat; */
+  background: url('images/login.jpeg') no-repeat;
   background-size: 100% 100%;
 }
-.login_wrapper {
+.wrapper {
   width: 60%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.250);
+  height: 90%;
+  background-color: rgba(109, 101, 156, 0.441);
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#welcome {
+  font-size: x-large;
+}
+label , #welcome{
+  color: white;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+form {
+  height: 60%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+}
+form input {
+  display: block;
+  height: 30px;
+  width: 93%;
+  font-size: 16px;
+  padding: 5px 10px;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+form button {
+  width: 96%;
+  height: 40px;
+  padding: 10px;
+  font-weight: 600;
+  font-size: larger;
+  letter-spacing: 2px;
+  color: white;
+  background-color: rgba(45, 182, 97, 0.555);
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: rgb(45, 182, 97);
+}
+
+form button:hover {
+  background-color: rgb(18, 218, 95);
 }
 
 /* Frames  */
 .card {
+    position: relative;
     flex: 1;
     margin: 10px;
     border-bottom-right-radius: 30px;
@@ -142,6 +192,19 @@ section {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
+.card_msg {
+  position: absolute;
+  background-color: rgba(231, 228, 228, 0.577);
+  height: 25px;
+  padding: 5px;
+  width: 90%;
+  left: 8px;
+  bottom: 30px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+}
 .first_frame {
   background: url("images/img_2.jpg") no-repeat center;
 }
@@ -191,7 +254,6 @@ footer {
     height: max-content;
     background-color: #041562;
     color: white;
-    margin-top: 20px;
 }
 footer ul {
     display: flex;
