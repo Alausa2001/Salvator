@@ -32,10 +32,47 @@
     </div>
     </nav>
   </header>
-  <section class="container">
+  <section class="container register">
     <div class="wrapper">
       <form action="" method="post">
-
+        <!--Personal Details-->
+        <fieldset>
+          <legend>Personal Details</legend>
+          <label for="fullname">Fullname (Last name, First name)</label>
+          <input type="text" name="fullname" id="fullname">
+          <label for="age">Age</label>
+          <input type="number" name="age" id="" min="1">
+          <label for="height">Height</label>
+          <input type="number" name="height" id="">
+          <label for="weight">Weight</label>
+          <input type="number" name="weight" id="">
+          <label for="blood_group">Blood Group</label>gg
+          <div class="bld_grp">
+          <label><input type="radio" name="blood_group" value="O+" class="blood_grp">O+</label>
+          <label><input type="radio" name="blood_group" value="0-" class="blood_grp">O-</label>
+          <label><input type="radio" name="blood_group" value="A+" class="blood_grp">A+</label>
+          <label><input type="radio" name="blood_group" value="A-" class="blood_grp">A-</label>
+          <label><input type="radio" name="blood_group" value="B+" class="blood_grp">B+</label>
+          <label><input type="radio" name="blood_group" value="B-" class="blood_grp">B-</label>
+          </div>
+          <label for="Genotype">Genotype</label>
+        </fieldset>
+        <!--Medical Records-->
+        <fieldset>
+          <legend>Medical Records</legend>
+        <label for="datetime">Date and Time</label>
+        <input type="datetime-local" name="datatime">
+        <label for="diagnosis">Diagnosis</label>
+        <textarea name="diagnosis" id="" cols="30" rows="10"></textarea>
+        <label for="prescription">Prescription</label>
+        <textarea name="prescription" id="" cols="30" rows="10"></textarea>
+        <label for="name_of_hospital">Hospital Name</label>
+        <input type="text" name="name_of_hospital">
+        <label for="doctor_name">Doctor's Name</label>
+        <input type="text" name="doctor_name">
+        <label for="doctor_contact">Doctor's Contact</label>
+        <input type="tel" name="doctor_contact">
+        <button>Register</button>
       </form>
     </div>
   </section>

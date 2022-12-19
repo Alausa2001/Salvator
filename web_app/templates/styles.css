@@ -124,6 +124,10 @@ section {
   background: url('images/login.jpeg') no-repeat;
   background-size: 100% 100%;
 }
+.register {
+  height: fit-content;
+  padding: 15px 0;
+}
 .wrapper {
   width: 60%;
   height: 90%;
@@ -175,7 +179,17 @@ form button {
   margin-top: 10px;
   border: rgb(45, 182, 97);
 }
-
+.blood_grp {
+  height: 10px;
+  margin: none;
+  padding: none;
+  width: 10px;
+  border: 1px solid red;
+}
+.bld_grp {
+  display: flex;
+  flex-wrap: wrap;
+}
 form button:hover {
   background-color: rgb(18, 218, 95);
 }
