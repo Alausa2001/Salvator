@@ -49,16 +49,16 @@ def login():
     password = login_details.get('password')
     user = storage.get_user(username, UserLogin)
     if not user:
-        return jsonify("User does not exists")
+        return make_response(jsonify("User does not exists"), 404)
     if password != user.password:
-        return jsonify("Wrong password")
+        return make_response(jsonify("Wrong password"), 400)
 
     # get a user's biodata
     med_id = user.id
     user_biodata = storage.get_biodata(med_id, UserMedInfo)
     if not user_biodata:
-        user_biodata = {"alert" : "You are yet to fill in your biodata"}
-    if type(user_biodata) is not dict:
+        biodata = {"alert" : "You are yet to fill in your biodata"}
+    if type(biodata) is not dict:
         biodata = user_biodata.to_dict()
 
     # """get a user's medical records"""
