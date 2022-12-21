@@ -1,60 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salvator | Login</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;500;700&amp;display=swap">
-    <link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500;700&amp;display=swap">
-</head>
-
-<body>
-  <header>
-    <div class="top">
-      <div class="login white">
-        <a href="login.html">LOG IN</a>
-      </div>
-      <div class="signup">
-        <a href="signup.html">SIGN UP</a>
-      </div>
-      <div class="icons">
-        <i class="fa fa-facebook-f"></i>
-        <i class="fa fa-twitter"></i>
-        <i class="fa fa-rss"></i>
-      </div>
-    </div>
-    <div class="middle">
-      <h2><a href="homepage.html">SALVATOR</a></h2>
-      <span id="tagline">   your medical credentials on the go. </span>
-    </div>
-    </nav>
-  </header>
+{% extends 'base.html'%}
+<!-- Title Block-->
+{% block title%}
+ {{ title }}
+{% endblock %}
+<!-- Content Block -->
+{% block content%}
   <section class="container">
     <div class="wrapper">
       <div id="welcome">Welcome</div>
-      <form action="" method="get">
-        <label for="username">Username </label>
-          <input type="text" name="username">
-          <label for="password">Password</label>
-          <input type="password" name="password">
-          <button>Login</button>
+      <form action="" method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.username.label }}
+        {{ form.username }}
+        {{ form.password.label }}
+        {{ form.password }}
+        {{ form.submit(class='submit') }}
       </form>
+      <div class="forget_pwd">
+        <a href='#'>Forget Password?</a>
+      </div>
     </div>
+    
   </section>
-  <footer>
-    <h1>SALVATOR    |   ALX PORTFOLIO PROJECT COHORT 6</h1>
-    <div class="author">
-      <h3>Authors</h3>
-    <ul>
-        <li>Abdulqoyum Oluwaferanmi Alausa</li>
-        <li>Abdulbasit Abdullahi</li>
-        <li>Joshua Oguntola</li>
-    </ul>
-    </div>
-  </footer>
-</body>
-
-</html>
+  {% endblock%}

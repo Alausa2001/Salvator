@@ -81,7 +81,11 @@ body {
   .signup:hover a {
     color: white;
   }
-  
+  .digit {
+    width: 30px;
+    margin-right: 10px;
+    display: inline-block;
+  }
 /* Sections */
 section {
     display: flex;
@@ -99,6 +103,7 @@ section {
     padding-top: 10px; 
     border-radius: 10px;
 }
+
 #service_content {
     display: flex;
     justify-content: space-evenly;
@@ -156,7 +161,7 @@ form {
 }
 form input {
   display: block;
-  height: 30px;
+  height: 20px;
   width: 93%;
   font-size: 16px;
   padding: 5px 10px;
@@ -165,7 +170,7 @@ form input {
   margin-bottom: 20px;
   border-radius: 5px;
 }
-form button {
+.submit {
   width: 96%;
   height: 40px;
   padding: 10px;
@@ -190,7 +195,7 @@ form button {
   display: flex;
   flex-wrap: wrap;
 }
-form button:hover {
+.submit:hover {
   background-color: rgb(18, 218, 95);
 }
 
