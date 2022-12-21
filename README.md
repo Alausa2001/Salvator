@@ -9,6 +9,7 @@ http://web-02.feranmi.tech
 
 ### ROUTES
 /register : POST method only
+
 POST    /register : creates a new user (username and password are sent in json format)
 
 ```
@@ -36,6 +37,7 @@ a_oluwaferanmi@Young-Sahaba:~$ curl -X POST http://127.0.0.1:5000/api/v1/registe
 
 ```
 /users : GET method only
+
 GET      /users : returns all Salvator users
 ```
 
@@ -64,13 +66,13 @@ a_oluwaferanmi@Young-Sahaba:~$ curl -X GET http://127.0.0.1:5000/api/v1/users
 ```
 /biodata/<username> : methods are POST, GET, PUT and DELETE
 
-POST     /biodata/<username> : creates the biodata of a users
+POST     /biodata/username : creates the biodata of a users
  
- GET    /biodata/<username>  : gets a user's biodata
+ GET    /biodata/username  : gets a user's biodata
  
- PUT    /biodata/<username> : updates a user's biodata
+ PUT    /biodata/username : updates a user's biodata
  
- DELETE /biodata/<username> : deletes's a user's biodata
+ DELETE /biodata/username : deletes's a user's biodata
  
 ```
 a_oluwaferanmi@Young-Sahaba:~$ curl -X POST http://127.0.0.1:5000/api/v1/biodata/Ajayi -H "Content-Type: application/json" -d '{"first_name": "Ajayi", "last_name": "Omowon", "blood_group": "B+", "genotype": "AA", "age": 23, "weight": 64.5, "height": 1.75, "allergies": "Hay fever"}'
