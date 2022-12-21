@@ -11,6 +11,7 @@ http://web-02.feranmi.tech
 GET      /users : returns all Salvator users
 `
 curl -X GET web-02.feranmi.tech/api/v1/users
+
 [
   {
     "__class__": "UserLogin",
@@ -20,6 +21,7 @@ curl -X GET web-02.feranmi.tech/api/v1/users
     "updated_at": "2022-12-20T12:26:28",
     "username": "bola"
   },
+  
   {
     "__class__": "UserLogin",
     "created_at": "2022-12-20T16:39:12",
