@@ -113,6 +113,33 @@ a_oluwaferanmi@Young-Sahaba:~$ curl -X POST http://127.0.0.1:5000/api/v1/biodata
   "weight": 64.5
 }
   
+  
+  a_oluwaferanmi@Young-Sahaba:~$ curl -X PUT http://127.0.0.1:5000/api/v1/biodata/Ajayi -H "Content-Type: application/json" -d '{"weight": 69.5, "height": 1.88}'
+  
+  {
+  "__class__": "UserMedInfo",
+  "age": 23,
+  "allergies": "Hay fever",
+  "blood_group": "B+",
+  "created_at": "2022-12-21T13:26:54",
+  "first_name": "Ajayi",
+  "genotype": "AA",
+  "height": 1.88,
+  "id": "7b081586-ea1c-4d4a-b91b-70e57bdfc6ea",
+  "last_name": "Omowon",
+  "med_id": "bcb1d959-b3f2-4dca-9fd5-754ffc35bfe8",
+  "updated_at": "2022-12-21T13:44:53.474191",
+  "weight": 69.5
+}
+  
+  a_oluwaferanmi@Young-Sahaba:~$ curl -X DELETE http://127.0.0.1:5000/api/v1/biodata/Ajayi
+  
+  "Deleted Successfully"
+  
+  a_oluwaferanmi@Young-Sahaba:~$ curl -X GET http://127.0.0.1:5000/api/v1/biodata/Ajayi
+  
+  "Record not found"
+  
   ```
 
  
