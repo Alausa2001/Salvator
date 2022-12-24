@@ -21,11 +21,14 @@ def register():
         if type(content) is dict:
             if 'username' in content.keys():
                 if 'password' in content.keys():
-                    new_user = UserLogin(**content)
-                    new_user.save()
-                    response = jsonify(new_user.to_dict())
-                    response.status_code = 201
-                    return response
+                    if 'email' in content.keys():
+                        new_user = UserLogin(**content)
+                        new_user.save()
+                        response = jsonify(new_user.to_dict())
+                        response.status_code = 201
+                        return response
+                    else:
+                        error = "missing email"
                 else:
                     error = "missing password"
             else:
@@ -47,7 +50,11 @@ def login():
         return jsonify("Not a JSON")
     username = login_details.get('username')
     password = login_details.get('password')
-    user = storage.get_user(username, UserLogin)
+    email = login_details.get('email')
+    if username:
+        user = storage.get_user(username, UserLogin)
+    if username is None and email is not None:
+        user = storage.get_user_via_email(email, password, UserLogin)
     if not user:
         return make_response(jsonify("User does not exists"), 404)
     if password != user.password:
