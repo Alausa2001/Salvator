@@ -58,7 +58,7 @@ def login():
     user_biodata = storage.get_biodata(med_id, UserMedInfo)
     if not user_biodata:
         biodata = {"alert" : "You are yet to fill in your biodata"}
-    if type(biodata) is not dict:
+    else:
         biodata = user_biodata.to_dict()
 
     # """get a user's medical records"""
@@ -66,7 +66,7 @@ def login():
     user_id = user.id
     records = storage.get_record(user_id, Records)
     if not records:
-        all_records = {"alert": "You have no saved biodata"}
+        all_records = {"alert": "You have no saved medical record"}
     if type(all_records) is not dict:
         for record in user.records:
             all_records.append(record.to_dict())
