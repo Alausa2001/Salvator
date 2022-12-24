@@ -54,11 +54,19 @@ class DbStorage:
         if obj is not None:
             self.__session.delete(obj)
 
-    def get_user(self, user, cls=UserLogin):
+    def get_user(self, username, cls=UserLogin):
         """returns a user with password"""
         if cls == UserLogin:
-            user = self.__session.query(cls).where(cls.username == user).first()
-        return user
+            user = self.__session.query(cls).filter(cls.username == username).first()
+            return user
+        return None
+    
+    def get_user_via_email(self, email, pwd, cls=UserLogin):
+        """return a user with a password"""
+        if cls == UserLogin:
+            user = self.__session.query(cls).filter(cls.password == pwd, cls.email == email).first()
+            return user
+        return None
 
     def get_biodata(self, med_id, cls):
         """return a user's biodata"""
