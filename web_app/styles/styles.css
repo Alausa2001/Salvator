@@ -12,12 +12,15 @@ body {
     color: white;
   }
 
+  #helpTextlogin:hover {
+    color:black
+  }
   /* Navigation/Header */
   
   header {
     background: #041562;
     width: 100%;
-    height: 210px;
+    height: 130px;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -26,8 +29,8 @@ body {
   .top {
     position: absolute;
     right: 0;
-    width: 50%;
-    height: 50px;
+    width: 45%;
+    height: 45px;
     display: flex;
     justify-content: right;
   }
@@ -43,6 +46,10 @@ body {
     font-family: "Red Hat Mono", sans-serif;
   }
   #tagline {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.2px;
+    font-style: italic;
     margin-left: 20px;
     margin-bottom: -20px;
     color: white;
@@ -51,7 +58,7 @@ body {
   /* Sign up and login button  */
   .login,
   .signup {
-    width: 230px;
+    width: 200px;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -116,8 +123,73 @@ section {
   border-radius: 10px;
 }
 
+/* Login */
+.login_wrapper {
+  height: 600px;
+  width: 100%;
+  margin: 0 auto;
+  background: url('../images/login.jpeg') no-repeat;
+  background-size: 100% 100%;
+}
+.wrapper {
+  width: 60%;
+  height: 90%;
+  background-color: rgba(109, 101, 156, 0.441);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#welcome {
+  font-size: x-large;
+}
+label , #welcome{
+  color: white;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+form {
+  height: 60%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+}
+form input {
+  display: block;
+  height: 30px;
+  width: 93%;
+  font-size: 16px;
+  padding: 5px 10px;
+  border: none;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+form button {
+  width: 96%;
+  height: 40px;
+  padding: 10px auto;
+  font-weight: 600;
+  font-size: larger;
+  letter-spacing: 2px;
+  color: white;
+  background-color: rgba(45, 182, 97, 0.555);
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 10px;
+  border: rgb(45, 182, 97);
+}
+
+form button:hover {
+  background-color: rgb(18, 218, 95);
+}
+
 /* Frames  */
 .card {
+    position: relative;
     flex: 1;
     margin: 10px;
     border-bottom-right-radius: 30px;
@@ -127,19 +199,32 @@ section {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
+.card_msg {
+  position: absolute;
+  background-color: rgba(231, 228, 228, 0.577);
+  height: 25px;
+  padding: 5px;
+  width: 90%;
+  left: 8px;
+  bottom: 30px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+}
 .first_frame {
-  background: url("images/img_2.jpg") no-repeat center;
+  background: url("../images/img_2.jpg") no-repeat center;
 }
 .second_frame {
-  background: url("images/img_5.jpg") no-repeat center;
+  background: url("../images/img_5.jpg") no-repeat center;
   background-color: #EFF4F7;
 }
 .third_frame {
-  background: url("images/img_4.jpg") no-repeat center;
+  background: url("../images/img_4.jpg") no-repeat center;
   background-color: #D1C8BF;
 }
 .fourth_frame {
-  background: url("images/img_1.jpg") no-repeat center;
+  background: url("../images/img_1.jpg") no-repeat center;
   background-position: 75% 50%;
   
 }
@@ -167,7 +252,7 @@ section {
   }
 
 /* Footer  */
-footer {
+/* footer {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -176,13 +261,12 @@ footer {
     height: max-content;
     background-color: #041562;
     color: white;
-    margin-top: 20px;
 }
 footer ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
+} */
 .author {
   width: 100%;
   height: max-content;
