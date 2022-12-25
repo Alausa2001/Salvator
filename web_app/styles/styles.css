@@ -54,7 +54,17 @@ body {
     margin-bottom: -20px;
     color: white;
   }
-  
+  @media screen and (max-width: 400px) {
+    #tagline {
+      visibility: hidden;
+    }
+    i {
+      visibility: hidden;
+    }
+    .top {
+      width: 100%;
+    }
+  }
   /* Sign up and login button  */
   .login,
   .signup {
@@ -187,6 +197,9 @@ form button:hover {
   background-color: rgb(18, 218, 95);
 }
 
+#newPwdText {
+  color: red;
+}
 /* Frames  */
 .card {
     position: relative;
@@ -252,7 +265,7 @@ form button:hover {
   }
 
 /* Footer  */
-/* footer {
+footer {
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -266,7 +279,7 @@ footer ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
-} */
+}
 .author {
   width: 100%;
   height: max-content;
@@ -274,4 +287,11 @@ footer ul {
 
 .author h3 {
   margin-left: 40px; 
+}
+
+.error {
+  display: block;
+  font-size: 14px;
+  color: red;
+  margin-bottom: 10px;
 }
