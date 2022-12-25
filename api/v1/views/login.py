@@ -12,6 +12,8 @@ def register():
     """register a user"""
     error = None
     content = request.get_json(silent=True)
+    if type(content) is not dict:
+        return make_response(jsonify("Not a JSON"), 400)
     password = content.get('password')
     username = content.get('username')
     user_exists = storage.get_user(username, UserLogin)
