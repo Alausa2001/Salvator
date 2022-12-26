@@ -1,92 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salvator | Signup</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;500;700&amp;display=swap">
-    <link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500;700&amp;display=swap">
-</head>
+ <!-- Inherit from base.html  -->
+{% extends 'base.html' %}
 
-<body>
-  <header>
-    <div class="top">
-      <div class="login white">
-        <a href="login.html">LOG IN</a>
-      </div>
-      <div class="signup">
-        <a href="signup.html">SIGN UP</a>
-      </div>
-      <div class="icons">
-        <i class="fa fa-facebook-f"></i>
-        <i class="fa fa-twitter"></i>
-        <i class="fa fa-rss"></i>
-      </div>
-    </div>
-    <div class="middle">
-      <h2><a href="homepage.html">SALVATOR</a></h2>
-      <span id="tagline">   your medical credentials on the go. </span>
-    </div>
-    </nav>
-  </header>
-  <section class="container register">
-    <div class="wrapper">
-      <form action="" method="post">
-        <!--Personal Details-->
-        <fieldset>
-          <legend>Personal Details</legend>
-          <label for="fullname">Fullname (Last name, First name)</label>
-          <input type="text" name="fullname" id="fullname">
-          <label for="age">Age</label>
-          <input type="number" name="age" id="" min="1">
-          <label for="height">Height</label>
-          <input type="number" name="height" id="">
-          <label for="weight">Weight</label>
-          <input type="number" name="weight" id="">
-          <label for="blood_group">Blood Group</label>gg
-          <div class="bld_grp">
-          <label><input type="radio" name="blood_group" value="O+" class="blood_grp">O+</label>
-          <label><input type="radio" name="blood_group" value="0-" class="blood_grp">O-</label>
-          <label><input type="radio" name="blood_group" value="A+" class="blood_grp">A+</label>
-          <label><input type="radio" name="blood_group" value="A-" class="blood_grp">A-</label>
-          <label><input type="radio" name="blood_group" value="B+" class="blood_grp">B+</label>
-          <label><input type="radio" name="blood_group" value="B-" class="blood_grp">B-</label>
-          </div>
-          <label for="Genotype">Genotype</label>
-        </fieldset>
-        <!--Medical Records-->
-        <fieldset>
-          <legend>Medical Records</legend>
-        <label for="datetime">Date and Time</label>
-        <input type="datetime-local" name="datatime">
-        <label for="diagnosis">Diagnosis</label>
-        <textarea name="diagnosis" id="" cols="30" rows="10"></textarea>
-        <label for="prescription">Prescription</label>
-        <textarea name="prescription" id="" cols="30" rows="10"></textarea>
-        <label for="name_of_hospital">Hospital Name</label>
-        <input type="text" name="name_of_hospital">
-        <label for="doctor_name">Doctor's Name</label>
-        <input type="text" name="doctor_name">
-        <label for="doctor_contact">Doctor's Contact</label>
-        <input type="tel" name="doctor_contact">
-        <button>Register</button>
-      </form>
-    </div>
-  </section>
-  <footer>
-    <h1>SALVATOR    |   ALX PORTFOLIO PROJECT COHORT 6</h1>
-    <div class="author">
-      <h3>Authors</h3>
-    <ul>
-        <li>Abdulqoyum Oluwaferanmi Alausa</li>
-        <li>Abdulbasit Abdullahi</li>
-        <li>Joshua Oguntola</li>
-    </ul>
-    </div>
-  </footer>
-</body>
+<!-- Title -->
+{% block title %}
 
-</html>
+  SIGNUP
+{% endblock %}
+
+<!-- Body contents  -->
+{% block content %}
+  <div class="container bg-light pt-4 justify-content-center align-items-center">
+    <form action="" method="POST" class="container w-50">
+      <h3 class="text-center">CREATE AN ACCOUNT</h3>
+      <hr>
+      {{ form.hidden_tag() }}
+      <div class="mb-3">
+        {{ form.username.label(class="form-label fs-4 d-block mb-2") }}
+        {{ form.username(class="form-control", placeholder="Username") }}
+      </div>
+
+      <div class="mb-3">
+        {{ form.email.label(class="form-label fs-4 d-block mb-2") }}
+        {{ form.email(class="form-control", placeholder="Email address") }}
+      </div>
+
+      <div class="mb-3">
+        {{ form.password.label(class="form-label fs-4 d-block mb-2") }}
+        {{ form.password(class="form-control", placeholder="Password") }}
+      </div>
+
+      <div class="mb-3">
+        {{ form.confirm_password.label(class="form-label fs-4 d-block mb-2") }}
+        {{ form.confirm_password(class="form-control", placeholder="Confirm password") }}
+      </div>
+
+      <div class="mb-3">
+        {{ form.submit(class="btn btn-success btn-lg w-100 mt-2") }}
+      </div>
+  
+  
+    </form>
+    <div class="form-control-plaintext text-center">Already have an account? <a href="{{ url_for('login') }}" class="text-decoration-none text-dark fw-bold">LOGIN</a></div>
+  </div>
+{% endblock %}

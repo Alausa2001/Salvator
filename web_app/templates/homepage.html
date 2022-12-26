@@ -1,78 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salvator | Homepage</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400;500;700&amp;display=swap">
-    <link rel="stylesheet" media="all" href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;500;700&amp;display=swap">
-</head>
+{% extends 'base.html' %}
 
-<body>
-  <header>
-    <div class="top">
-      <div class="login white">
-        <a href="login.html">LOG IN</a>
-      </div>
-      <div class="signup">
-        <a href="signup.html">SIGN UP</a>
-      </div>
-      <div class="icons">
-        <i class="fa fa-facebook-f"></i>
-        <i class="fa fa-twitter"></i>
-        <i class="fa fa-rss"></i>
-      </div>
-    </div>
-    <div class="middle">
-      <h2><a href="homepage.html">SALVATOR</a></h2>
-      <span id="tagline">   your medical credentials on the go. </span>
-    </div>
-    </nav>
-  </header>
-  <section class="service">
-    <h1 class="head">Our Services</h1>
-    <div id="service_content">
-        <div class="card first_frame"><div class="card_msg">Medical Records</div></div>
-        <div class="card second_frame"><div class="card_msg">Book an Appointment</div></div>
-        <div class="card third_frame"><div class="card_msg">Nearest Hospital</div></div>
-        <div class="card fourth_frame"><div class="card_msg">Emergency Alert</div></div>
-    </div>
-  </section>
-  <section class="service">
-    <h1 class="head">Our Vision</h1>
-    <div class="inner">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+<!-- Page title in here -->
+{% block title %}
+  HOME
+{% endblock %}
 
-        Phasellus eget egestas orci. Nulla sagittis rutrum urna pellentesque molestie. 
+<!-- Content of the homepage goes below  -->
+{% block content %}
+<section class="service">
+  <h1 class="head">Our Services</h1>
+  <div id="service_content">
+      <div class="card first_frame"><div class="card_msg">Medical Records</div></div>
+      <div class="card second_frame"><div class="card_msg">Book an Appointment</div></div>
+      <div class="card third_frame"><div class="card_msg">Nearest Hospital</div></div>
+      <div class="card fourth_frame"><div class="card_msg">Emergency Alert</div></div>
+  </div>
+</section>
+<section class="service">
+  <h1 class="head">Our Vision</h1>
+  <div class="inner">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 
-        Donec sed augue scelerisque, venenatis magna eu, suscipit lacus. Curabitur ut malesuada arcu, ut tincidunt metus. Sed eleifend euismod nulla, nec rhoncus ex. Quisque rutrum purus non metus varius vehicula.
-        Nullam laoreet dui ut nunc molestie lacinia.
-    </div>
-  <section class="service">
-    <h1 class="head">Our Mission</h1>
-    <div class="inner">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      Phasellus eget egestas orci. Nulla sagittis rutrum urna pellentesque molestie. 
 
-        Phasellus eget egestas orci. Nulla sagittis rutrum urna pellentesque molestie.
+      Donec sed augue scelerisque, venenatis magna eu, suscipit lacus. Curabitur ut malesuada arcu, ut tincidunt metus. Sed eleifend euismod nulla, nec rhoncus ex. Quisque rutrum purus non metus varius vehicula.
+      Nullam laoreet dui ut nunc molestie lacinia.
+  </div>
+<section class="service">
+  <h1 class="head">Our Mission</h1>
+  <div class="inner">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
-        Donec sed augue scelerisque, venenatis magna eu, suscipit lacus. Curabitur ut malesuada arcu, ut tincidunt metus. Sed eleifend euismod nulla, nec rhoncus ex. Quisque rutrum purus non metus varius vehicula.
-        Nullam laoreet dui ut nunc molestie lacinia.
-    </div>
-  </section>
-  <footer>
-    <h1>SALVATOR    |   ALX PORTFOLIO PROJECT COHORT 6</h1>
-    <div class="author">
-      <h3>Authors</h3>
-    <ul>
-        <li>Abdulqoyum Oluwaferanmi Alausa</li>
-        <li>Abdulbasit Abdullahi</li>
-        <li>Joshua Oguntola</li>
-    </ul>
-    </div>
-  </footer>
-</body>
+      Phasellus eget egestas orci. Nulla sagittis rutrum urna pellentesque molestie.
 
-</html>
+      Donec sed augue scelerisque, venenatis magna eu, suscipit lacus. Curabitur ut malesuada arcu, ut tincidunt metus. Sed eleifend euismod nulla, nec rhoncus ex. Quisque rutrum purus non metus varius vehicula.
+      Nullam laoreet dui ut nunc molestie lacinia.
+  </div>
+</section>
+{% endblock %}
