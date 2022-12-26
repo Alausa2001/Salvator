@@ -60,6 +60,13 @@ class DbStorage:
             user = self.__session.query(cls).filter(cls.username == username).first()
             return user
         return None
+
+    def check_email(self, email, cls=UserLogin):
+        """check if a an email is already used by a user"""
+        if cls == UserLogin:
+            user = self.__session.query(cls).filter(cls.email == email).first()
+            return user
+        return None
     
     def get_user_via_email(self, email, pwd, cls=UserLogin):
         """return a user with a password"""

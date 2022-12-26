@@ -16,9 +16,13 @@ def register():
         return make_response(jsonify("Not a JSON"), 400)
     password = content.get('password')
     username = content.get('username')
+    email = content.get('email')
     user_exists = storage.get_user(username, UserLogin)
     if user_exists:
         return jsonify("User Exists")
+    email_exists = storage.check_email(email, UserLogin)
+    if email_exists:
+        return jsonify("Email Exists")
     if request.method == 'POST':
         if type(content) is dict:
             if 'username' in content.keys():
