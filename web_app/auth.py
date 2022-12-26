@@ -40,8 +40,28 @@ def login():
     """ Login User """
     form = LoginForm()
     if form.validate_on_submit():
-        session['username'] = form.username.data
-        return redirect(url_for(f'dashboard/{form.username.data}'))
+        username = form.username.data
+        email = form.email.data
+        password = form.password.data
+        url = 'http://web-02.feranmi.tech/api/v1/users'
+        response = requests.get(url)
+        # Validate if user is already registered
+        for user in response.json():
+            usr = user.get['username']
+            pwd = user.get['password']
+            em = user.get['email']
+            if username == usr:
+                if check_password_hash(pwd, password):
+                    session['username'] = username
+                    flash(f'You are now logged in', 'success')
+                    return redirect(url_for(f'blog.dashboard/{username}'))
+                else:
+                    flash('Your password is incorrect', 'danger')
+                    return redirect(url_for('auth.login'))
+        flash(f'User {username} is not registered', 'danger')
+    if form.errors != {}:
+        for field, msg in form.errors.items():
+            flash(f'{field} : {msg[0]}', category='danger')
     return render_template('auth/login.html', form=form)
 
 
