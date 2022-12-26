@@ -9,8 +9,8 @@
     <script src="{{ url_for('static', filename='script.js') }}"></script>
     <title>SALVATOR | {% block title %}{% endblock %}</title>
 </head>
-<body>
-    <header class="container-fluid sticky-top">
+<body class="bg-light">
+    <header class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
                 <a class="navbar-brand" href=" {{ url_for('home')}} ">SALVATOR</a>
@@ -20,7 +20,7 @@
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                       <li class="nav-item">
-                        <a class="nav-link" href="#">LOGIN</a>
+                        <a class="nav-link" href="{{ url_for('login') }}">LOGIN</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('signup') }}">SIGNUP</a>
@@ -55,8 +55,30 @@
     {% block content %}
         <!-- Contents goes in here  -->
     {% endblock %}
-    <footer>
-
+    <footer class="container-fluid bg-dark text-white-50 row">
+            <div class="col-5 mb-2 mt-4">AUTHORS
+                <ul>
+                    <li class="nav-item navbar-text"><span></span>ABDULLAHI ABDULBASIT</li>
+                    <li class="nav-item navbar-text"><span></span>ALAUSA ABDULQOYYUM OLUWAFERANMI</li>
+                    <li class="nav-item navbar-text"><span></span>OGUNTOLA JOSHUA</li>
+                </ul>
+            </div>
+            <div class="col-5 mb-2 mt-4">SERVICES
+                <ul>
+                    <li class="nav-item navbar-text"><span></span>MEDICAL RECORDS</li>
+                    <li class="nav-item navbar-text"><span></span>BOOK AN APPOINMENT</li>
+                    <li class="nav-item navbar-text"><span></span>NEAREST HOSPITAL</li>
+                    <li class="nav-item navbar-text"><span></span>EMERGENCY ALERT</li>
+                </ul>
+            </div>
+            <div class="col-2 mb-2 mt-4">NAVS
+                <ul>
+                    <li class="nav-item navbar-text"><span></span>LOGIN</li>
+                    <li class="nav-item navbar-text"><span></span>SIGN UP</li>
+                    <li class="nav-item navbar-text"><span></span>API DOCS</li>
+                </ul>
+            </div>
+            <div class="mb-1">@ ALX PORTFOLIO PROJECT |  COHORT 6</div>
     </footer>
 </body>
 </html>

@@ -1,4 +1,8 @@
-
+body {
+  box-sizing: border-box;
+  margin: none;
+  border: none;
+}
   /* Navigation/Header */
 header {
     background-color: #e3f2fd;
@@ -14,6 +18,7 @@ section {
 }
 .head {
     background-color: #e3f2fd;
+    padding: 4px 0;
     width: 65%;
     height: 50px;
     text-align: center;
@@ -81,21 +86,14 @@ section {
 
 
 /* Footer  */
-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    width: 100%;
-    height: max-content;
-    background-color: #041562;
-    color: white;
+li {
+  list-style-type: none;
 }
-footer ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+li span {
+  padding-left: 10px;
+  border-left: 4px solid white;
 }
+
 .author {
   width: 100%;
   height: max-content;

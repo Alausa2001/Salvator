@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from flask import Flask, render_template, flash, redirect, url_for
 import requests
-from templates.forms import SignUpForm
+from templates.forms import SignUpForm, LoginForm
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '3ff31a6c7ebd7c9773b8de18bc8ddb13'
@@ -34,7 +34,7 @@ def signup():
             elif msg == 'Email Exists':
                 flash('The email address has already been taken. Try a new email address', 'danger')
         elif response.status_code == 201:
-            flash(f"You have successfully created an account! {form.username.data}", 'info')
+            flash(f"You have successfully created an account! {form.username.data}", 'success')
             return redirect(url_for('home'))
     if form.errors != {}:
         for msg in form.errors.values():
@@ -45,7 +45,8 @@ def signup():
 @app.route('/login', methods=['GET', 'POST'], strict_slashes=False)
 def login():
     """ Login User """
-    return render_template('login.html')
+    form = LoginForm()
+    return render_template('login.html', form=form)
 
 
 if __name__ == "__main__":
