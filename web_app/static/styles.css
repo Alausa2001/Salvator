@@ -3,6 +3,9 @@ body {
   margin: none;
   border: none;
 }
+.l-blue {
+  background-color: #e3f2fd;
+}
   /* Navigation/Header */
 header {
     background-color: #e3f2fd;

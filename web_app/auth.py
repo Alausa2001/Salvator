@@ -14,7 +14,20 @@ def load_logged_in_user():
     if username is None:
         g.user = None
     else:
-        g.user = username
+        email = session.get('email')
+        password = session.get('password')
+        data = {
+            'username': username,
+            'email': email,
+            'password': password
+        }
+        url = 'http://web-02.feranmi.tech/api/v1/login'
+        response = requests.post(url, json=data)
+        user_data = {'details': {'username': username, 'email': email}}
+        info = response.json()
+        user_data['biodata'] = info['biodata']
+        user_data['records'] = info['medical_records']
+        g.user = user_data
 
 
 @bp.route('/login', methods=['GET', 'POST'], strict_slashes=False)
@@ -36,7 +49,9 @@ def login():
             if username == usr or email == em:
                 if check_password_hash(pwd, password):
                     session.clear()
-                    session['username'] = user['username']
+                    session['username'] = username
+                    session['email'] = email
+                    session['password'] = pwd
                     flash(f'You are now logged in as {username} 😎', 'success')
                     return redirect(url_for(f'blog.dashboard'))
                 else:
