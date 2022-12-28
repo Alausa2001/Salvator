@@ -25,8 +25,8 @@ def load_logged_in_user():
         response = requests.post(url, json=data)
         user_data = {'details': {'username': username, 'email': email}}
         info = response.json()
-        user_data['biodata'] = info['biodata']
-        user_data['records'] = info['medical_records']
+        user_data['biodata'] = info.get('biodata')
+        user_data['records'] = info.get('medical_records')
         g.user = user_data
 
 
