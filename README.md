@@ -2,10 +2,10 @@
 Your medical records on the go
 
 
-# API DOCUMENTATION
+# API USAGE
 
 ### BASE URL
-http://web-02.feranmi.tech
+http://web-02.feranmi.tech/api/v1
 
 ### ROUTES
 /register : POST method only
@@ -146,8 +146,7 @@ a_oluwaferanmi@Young-Sahaba:~$ curl -X POST http://127.0.0.1:5000/api/v1/biodata
   POST :      /record/username :          creates a medical record
   
   ```
-  a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X POST http://127.0.0.1:5000/api/v1/record/Ajayi -H "Content-Type: applica
-tion/json" -d '{"date": "22/12/1930", "diagnosis": "Tuberculosis", "hospital": "healthtex hospital", "doctor_name": "Alalade Ajala", "doctor_contact": "Alalade@gmail.com", "prescription": "Pyrazinamide"}'
+  a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X POST http://127.0.0.1:5000/api/v1/record/Ajayi -H "Content-Type: application/json" -d '{"date": "22/12/1930", "diagnosis": "Tuberculosis", "hospital": "healthtex hospital", "doctor_name": "Alalade Ajala", "doctor_contact": "Alalade@gmail.com", "prescription": "Pyrazinamide"}'
 
 {
   "__class__": "Records",
@@ -164,8 +163,7 @@ tion/json" -d '{"date": "22/12/1930", "diagnosis": "Tuberculosis", "hospital": "
 }
 
 
-a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X POST http://127.0.0.1:5000/api/v1/record/Ajayi -H "Content-Type: applica
-tion/json" -d '{"date": "22/12/1937", "diagnosis": "Diabetes", "hospital": "healthtex hospital", "doctor_name": "Alalade Ajala", "doctor_contact": "Alalade@gmail.com", "prescription": "Dialysis"}'
+a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X POST http://127.0.0.1:5000/api/v1/record/Ajayi -H "Content-Type: application/json" -d '{"date": "22/12/1937", "diagnosis": "Diabetes", "hospital": "healthtex hospital", "doctor_name": "Alalade Ajala", "doctor_contact": "Alalade@gmail.com", "prescription": "Dialysis"}'
  
  {
   "__class__": "Records",
@@ -221,9 +219,7 @@ tion/json" -d '{"date": "22/12/1937", "diagnosis": "Diabetes", "hospital": "heal
   
   "You have no saved record"
   
-  a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X POST http://127.0.0.1:5000/api/v1/record/Alabi -H "Content-Type: applica
-tion/json" -d '{"date": "22/12/1957", "diagnosis": "Covid-19", "hospital": "healthtex hospital", "doctor_name": "Alalade
- Ajala", "doctor_contact": "Alalade@gmail.com", "prescription": "14-day isolation"}'
+  a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X POST http://127.0.0.1:5000/api/v1/record/Alabi -H "Content-Type: application/json" -d '{"date": "22/12/1957", "diagnosis": "Covid-19", "hospital": "healthtex hospital", "doctor_name": "Alalade Ajala", "doctor_contact": "Alalade@gmail.com", "prescription": "14-day isolation"}'
   
   {
   "__class__": "Records",
@@ -293,8 +289,7 @@ tion/json" -d '{"date": "22/12/1957", "diagnosis": "Covid-19", "hospital": "heal
   
   (corrected the date of alabi's visit)
   
-  a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X PUT http://127.0.0.1:5000/api/v1/record/12ea9d9c-9483-44c6-aa37-2748ec1ba511/Alabi -H "Content-Type: application/json" -
-d '{"date": "22/12/1963"}'
+  a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X PUT http://127.0.0.1:5000/api/v1/record/12ea9d9c-9483-44c6-aa37-2748ec1ba511/Alabi -H "Content-Type: application/json" -d '{"date": "22/12/1963"}'
   
     "__class__": "Records",
   "created_at": "2022-12-29T23:34:54",
@@ -335,8 +330,7 @@ A user can login via username and password or email and password
   
   via username and password
   
-  a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X POST http://127.0.0.1:5000/api/v1/login -H "Content-Type: application/json" -d '{"username": "Alabi", "password": "Alabi
-2001"}'
+  a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X POST http://127.0.0.1:5000/api/v1/login -H "Content-Type: application/json" -d '{"username": "Alabi", "password": "Alabi2001"}'
   
   {
   "biodata": {
@@ -348,7 +342,108 @@ A user can login via username and password or email and password
 }
   
   
+  a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X POST http://127.0.0.1:5000/api/v1/login -H "Content-Type: application/json" -d '{"username": "Ajayi", "password": "Ajayi2001"}'
+  
+  
+  {
+  "biodata": {
+    "__class__": "UserMedInfo",
+    "age": 23,
+    "allergies": "Hay fever",
+    "blood_group": "B+",
+    "created_at": "2022-12-30T00:05:32",
+    "first_name": "Ajayi",
+    "genotype": "AA",
+    "height": 1.75,
+    "id": "f1cfe558-06da-4af7-821c-bd9824f60d7f",
+    "last_name": "Omowon",
+    "med_id": "0dacde3c-4a7c-42da-943d-76da57b2877e",
+    "updated_at": "2022-12-30T00:05:32",
+    "weight": 64.5
+  },
+  "medical_records": [
+    {
+      "__class__": "Records",
+      "created_at": "2022-12-30T00:06:49",
+      "date": "22/12/1937",
+      "diagnosis": "Diabetes",
+      "doctor_contact": "Alalade@gmail.com",
+      "doctor_name": "Alalade Ajala",
+      "hospital": "healthtex hospital",
+      "id": "1970fe35-9df4-429b-a67a-2a111ad919c5",
+      "prescription": "Dialysis",
+      "records_id": "0dacde3c-4a7c-42da-943d-76da57b2877e",
+      "updated_at": "2022-12-30T00:06:49"
+    },
+    {
+      "__class__": "Records",
+      "created_at": "2022-12-30T00:06:08",
+      "date": "22/12/1930",
+      "diagnosis": "Tuberculosis",
+      "doctor_contact": "Alalade@gmail.com",
+      "doctor_name": "Alalade Ajala",
+      "hospital": "healthtex hospital",
+      "id": "d6ce60f9-ec73-47ec-8d89-6938aeec029c",
+      "prescription": "Pyrazinamide",
+      "records_id": "0dacde3c-4a7c-42da-943d-76da57b2877e",
+      "updated_at": "2022-12-30T00:06:08"
+    }
+  ]
+}
+  
+  
+  
 via email and password
+  
+  
+  a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X POST http://127.0.0.1:5000/api/v1/login -H "Content-Type: application/json" -d '{"email": "Ajayi@gmail.com", "password": "Ajayi2001"}'
+  
+  
+  {
+  "biodata": {
+    "__class__": "UserMedInfo",
+    "age": 23,
+    "allergies": "Hay fever",
+    "blood_group": "B+",
+    "created_at": "2022-12-30T00:05:32",
+    "first_name": "Ajayi",
+    "genotype": "AA",
+    "height": 1.75,
+    "id": "f1cfe558-06da-4af7-821c-bd9824f60d7f",
+    "last_name": "Omowon",
+    "med_id": "0dacde3c-4a7c-42da-943d-76da57b2877e",
+    "updated_at": "2022-12-30T00:05:32",
+    "weight": 64.5
+  },
+  "medical_records": [
+    {
+      "__class__": "Records",
+      "created_at": "2022-12-30T00:06:49",
+      "date": "22/12/1937",
+      "diagnosis": "Diabetes",
+      "doctor_contact": "Alalade@gmail.com",
+      "doctor_name": "Alalade Ajala",
+      "hospital": "healthtex hospital",
+      "id": "1970fe35-9df4-429b-a67a-2a111ad919c5",
+      "prescription": "Dialysis",
+      "records_id": "0dacde3c-4a7c-42da-943d-76da57b2877e",
+      "updated_at": "2022-12-30T00:06:49"
+    },
+    {
+      "__class__": "Records",
+      "created_at": "2022-12-30T00:06:08",
+      "date": "22/12/1930",
+      "diagnosis": "Tuberculosis",
+      "doctor_contact": "Alalade@gmail.com",
+      "doctor_name": "Alalade Ajala",
+      "hospital": "healthtex hospital",
+      "id": "d6ce60f9-ec73-47ec-8d89-6938aeec029c",
+      "prescription": "Pyrazinamide",
+      "records_id": "0dacde3c-4a7c-42da-943d-76da57b2877e",
+      "updated_at": "2022-12-30T00:06:08"
+    }
+  ]
+}
 
 ```
   
