@@ -327,11 +327,27 @@ d '{"date": "22/12/1963"}'
   ```
   
 
-POST    /login : username and password are sent as json and it returns the medical records and biodta of that user
+POST    /login : username and password are sent as json and it returns the medical records and biodata of that user
 
 A user can login via username and password or email and password
 
 ```
+  
+  via username and password
+  
+  a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X POST http://127.0.0.1:5000/api/v1/login -H "Content-Type: application/json" -d '{"username": "Alabi", "password": "Alabi
+2001"}'
+  
+  {
+  "biodata": {
+    "alert": "You are yet to fill in your biodata"
+  },
+  "medical_records": {
+    "alert": "You have no saved biodata"
+  }
+}
+  
+  
 via email and password
 
 ```
