@@ -9,7 +9,7 @@
  <!-- Body contents  -->
  {% block content %}
    <div class="container bg-light pt-4 justify-content-center align-items-center">
-     <form action="" method="POST" class="container w-50">
+     <form action="" method="POST" class="container w-50 needs-validation" novalidate>
        <h3 class="text-center">WELCOME</h3>
        <hr>
        {{ form.hidden_tag() }}
@@ -34,6 +34,6 @@
    
    
      </form>
-     <div class="form-control-plaintext text-center">Do not have an account? <a href="{{ url_for('signup') }}" class="text-decoration-none text-dark fw-bold">SIGN UP</a></div>
+     <div class="form-control-plaintext text-center">Do not have an account? <a href="{{ url_for('auth.signup') }}" class="text-decoration-none text-dark fw-bold">SIGN UP</a></div>
    </div>
  {% endblock %}
