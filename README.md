@@ -286,6 +286,46 @@ tion/json" -d '{"date": "22/12/1957", "diagnosis": "Covid-19", "hospital": "heal
   "Record not found"
   
   ```
+  
+  PUT :   record/<id>/<username>    : update the medical record with the specified id
+  
+  ```
+  
+  (corrected the date of alabi's visit)
+  
+  a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X PUT http://127.0.0.1:5000/api/v1/record/12ea9d9c-9483-44c6-aa37-2748ec1ba511/Alabi -H "Content-Type: application/json" -
+d '{"date": "22/12/1963"}'
+  
+    "__class__": "Records",
+  "created_at": "2022-12-29T23:34:54",
+  "date": "22/12/1963",
+  "diagnosis": "Covid-19",
+  "doctor_contact": "Alalade@gmail.com",
+  "doctor_name": "Alalade Ajala",
+  "hospital": "healthtex hospital",
+  "id": "12ea9d9c-9483-44c6-aa37-2748ec1ba511",
+  "prescription": "14-day isolation",
+  "records_id": "4e70a859-c2fa-4c15-bd55-886eac4056de",
+  "updated_at": "2022-12-29T23:46:40.627678"
+}
+  
+  ```
+  
+  DELETE :        record/<id>/<username> : deletes the record with the specified id
+  
+  ```
+  
+  a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X DELETE http://127.0.0.1:5000/api/v1/record/12ea9d9c-9483-44c6-aa37-2748ec1ba511/Alabi
+  
+  "Deleted Successfully"
+  
+  a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X GET http://127.0.0.1:5000/api/v1/record/12ea9d9c-9483-44c6-aa37-2748ec1ba511/Alabi
+  
+  
+  "Record not found"
+  
+  ```
+  
 
 POST    /login : username and password are sent as json and it returns the medical records and biodta of that user
 
