@@ -143,7 +143,7 @@ a_oluwaferanmi@Young-Sahaba:~$ curl -X POST http://127.0.0.1:5000/api/v1/biodata
   
   ```
   
-  POST :      /record/<username> :          creates a medical record
+  POST :      /record/username :          creates a medical record
   
   ```
   a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X POST http://127.0.0.1:5000/api/v1/record/Ajayi -H "Content-Type: applica
@@ -183,7 +183,7 @@ tion/json" -d '{"date": "22/12/1937", "diagnosis": "Diabetes", "hospital": "heal
 
 ```
   
-  GET          :   /records/<username> :   returns a list of a user's medical records
+  GET          :   /records/username :   returns a list of a user's medical records
   ```
   
   a_oluwaferanmi@Young-Sahaba:~/Salvator$ curl -X GET http://127.0.0.1:5000/api/v1/records/Ajayi
@@ -260,7 +260,7 @@ tion/json" -d '{"date": "22/12/1957", "diagnosis": "Covid-19", "hospital": "heal
   
   ```
   
-  GET :      record/<id>/<username> : rettuns the medical record of the user with the specified id
+  GET :      record/id/username : rettuns the medical record of the user with the specified id
   
   ```
   
@@ -287,7 +287,7 @@ tion/json" -d '{"date": "22/12/1957", "diagnosis": "Covid-19", "hospital": "heal
   
   ```
   
-  PUT :   record/<id>/<username>    : update the medical record with the specified id
+  PUT :   record/id/username    : update the medical record with the specified id
   
   ```
   
@@ -311,7 +311,7 @@ d '{"date": "22/12/1963"}'
   
   ```
   
-  DELETE :        record/<id>/<username> : deletes the record with the specified id
+  DELETE :        record/id/username : deletes the record with the specified id
   
   ```
   
