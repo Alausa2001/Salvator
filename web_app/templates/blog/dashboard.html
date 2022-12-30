@@ -11,16 +11,16 @@
 <div class="container bg-light pt-3 justify-content-center">
     <div class="row pt-3 align-items-center">
         <h3 class="col-md-9">DASHBOARD</h3>
-        <div class="col-md-2 me-3 border border-success rounded text-center p-2">
+        <div class="col-md-2 me-3 border border-success rounded text-center p-2 robo">
             <h5>{{ g.user['details']['username'].upper() }} <i class="fa-regular fa-user ms-3"></i></h5>
         </div>
     </div>
     <div class="container mt-3">
         <div class="row">
-            <div class="row l-blue p-2 rounded">
+            <div class="row l-blue p-2 rounded robo">
                 <h4>Personal Details</h4>
             </div>
-            <div class="row mt-2">
+            <div class="row mt-2 trech fs-5">
                 {% for key, value in g.user['details'].items() %}
                  <div class="h6 col-md-4">
                     {{ key.upper()}}
@@ -32,10 +32,10 @@
             </div>
         </div>
         <div class="row">
-            <div class="row l-blue p-2 rounded">
+            <div class="row l-blue p-2 rounded robo">
                 <h4>Biodata</h4>
             </div>
-            <div class="row mt-2">
+            <div class="row mt-2 trech">
                 <form action="" method="POST" class="needs-validation" novalidate>
                     {% if g.user['biodata'].get('alert') %}
                     <div class="form-group mb-3">
@@ -49,15 +49,17 @@
 
                         <div class="row">
                             <div class="col-md-2">{{ bioform.age.label(class="mb-1 fs-5") }}
-                                {{ bioform.age(class="form-control w-25 mb-2", placeholder="Age") }}</div>
+                                {{ bioform.age(class="form-control mb-2", placeholder="Age") }}</div>
                             <div class="col-md-2"> {{ bioform.genotype.label(class="mb-1 fs-5") }}
-                                {{ bioform.genotype(class="form-control w-25 mb-2", placeholder="AA") }}</div>
+                                {{ bioform.genotype(class="form-control mb-2", placeholder="AA") }}</div>
                             <div class="col-md-2">{{ bioform.bloodgroup.label(class="mb-1 fs-5") }}
-                                {{ bioform.bloodgroup(class="form-control w-25 mb-2", placeholder="A+") }}</div>
-                            <div class="col-md-3">{{ bioform.height.label(class="mb-1 fs-5") }}
-                                    {{ bioform.height(class="form-control w-25 mb-2", placeholder="in cm") }}</div>
-                            <div class="col-md-3">{{ bioform.weight.label(class="mb-1 fs-5") }}
-                                {{ bioform.weight(class="form-control w-25 mb-2", placeholder="in kg") }}</div>
+                                {{ bioform.bloodgroup(class="form-control mb-2", placeholder="A+") }}</div>
+                            <div class="col-md-2">{{ bioform.height.label(class="mb-1 fs-5") }}
+                                {{ bioform.height(class="form-control mb-2", placeholder="in cm") }}</div>
+                            <div class="col-md-2">{{ bioform.weight.label(class="mb-1 fs-5") }}
+                                {{ bioform.weight(class="form-control mb-2", placeholder="in kg") }}</div>
+                        </div>
+                        <div class="row">
                         </div>
                         {{ bioform.allergies.label(class="mb-1 fs-5") }}
                         {{ bioform.allergies(class="form-control mb-2", placeholder="Separate each allergy by a comma (,)")}}
@@ -69,8 +71,8 @@
                                 <tr class="fs-5"><td>Firstname</td><td class="text-success text-center">{{g.user['biodata'].get('first_name')}}</td></tr>
                                 <tr class="fs-5"><td>Lastname</td><td class="text-success text-center">{{ g.user['biodata'].get('last_name') }}</td></tr>
                                 <tr class="fs-5"><td>Age</td><td class="text-success text-center">{{ g.user['biodata'].get('age') }}</td></tr>
-                                <tr class="fs-5"><td>Height</td><td class="text-success text-center">{{ g.user['biodata'].get('height') }}</td></tr>
-                                <tr class="fs-5"><td>Weight</td><td class="text-success text-center">{{ g.user['biodata'].get('weight') }}</td></tr>
+                                <tr class="fs-5"><td>Height</td><td class="text-success text-center">{{ g.user['biodata'].get('height') }} cm</td></tr>
+                                <tr class="fs-5"><td>Weight</td><td class="text-success text-center">{{ g.user['biodata'].get('weight') }} kg</td></tr>
                                 <tr class="fs-5"><td>Blood Group</td><td class="text-success text-center">{{ g.user['biodata'].get('blood_group') }}</td></tr>
                                 <tr class="fs-5"><td>Genotype</td><td class="text-success text-center">{{ g.user['biodata'].get('genotype') }}</td></tr>
                                 <tr class="fs-5"><td>Allergies</td><td class="text-success text-center">{{ g.user['biodata'].get('allergies') }}</td></tr>
@@ -80,10 +82,10 @@
             </div>
         </div>
         <div class="row"> 
-            <div class="row l-blue p-2 rounded">
+            <div class="row l-blue p-2 rounded robo">
                 <h4>Medical Records</h4>
             </div>
-            <div class="row mt-2">
+            <div class="row mt-2 trech">
             {% if g.user['records'].get('alert') %}
                 <p> There should be a form here</p>
             {% else %}

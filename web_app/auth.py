@@ -1,5 +1,5 @@
 from flask import Blueprint, flash, g, redirect, render_template, session, url_for
-from forms import LoginForm, SignUpForm
+from web_app.forms import LoginForm, SignUpForm
 import requests
 from werkzeug.security import check_password_hash, generate_password_hash
 
