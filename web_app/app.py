@@ -1,5 +1,5 @@
-from auth import bp
-from blog import bg
+from web_app.auth import bp
+from web_app.blog import bg
 from flask import Flask
 
 
