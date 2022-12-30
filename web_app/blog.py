@@ -1,7 +1,7 @@
-from auth import load_logged_in_user
+from web_app.auth import load_logged_in_user
 import functools
 from flask import abort, Blueprint, flash, g, redirect, render_template, session, url_for
-from forms import BiodataForm
+from web_app.forms import BiodataForm
 import requests
 
 
