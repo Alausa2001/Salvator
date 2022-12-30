@@ -35,7 +35,7 @@
             <div class="row l-blue p-2 rounded">
                 <h4>Biodata</h4>
             </div>
-            <div class="row mt-2">
+            <div class="row mt-2 justify-content-center">
                 <form action="" method="POST" class="needs-validation" novalidate>
                     {% if g.user['biodata'].get('alert') %}
                     <div class="form-group mb-3">
@@ -49,15 +49,17 @@
 
                         <div class="row">
                             <div class="col-md-2">{{ bioform.age.label(class="mb-1 fs-5") }}
-                                {{ bioform.age(class="form-control w-25 mb-2", placeholder="Age") }}</div>
+                                {{ bioform.age(class="form-control mb-2", placeholder="Age") }}</div>
                             <div class="col-md-2"> {{ bioform.genotype.label(class="mb-1 fs-5") }}
-                                {{ bioform.genotype(class="form-control w-25 mb-2", placeholder="AA") }}</div>
+                                {{ bioform.genotype(class="form-control mb-2", placeholder="AA") }}</div>
                             <div class="col-md-2">{{ bioform.bloodgroup.label(class="mb-1 fs-5") }}
-                                {{ bioform.bloodgroup(class="form-control w-25 mb-2", placeholder="A+") }}</div>
-                            <div class="col-md-3">{{ bioform.height.label(class="mb-1 fs-5") }}
-                                    {{ bioform.height(class="form-control w-25 mb-2", placeholder="in cm") }}</div>
-                            <div class="col-md-3">{{ bioform.weight.label(class="mb-1 fs-5") }}
-                                {{ bioform.weight(class="form-control w-25 mb-2", placeholder="in kg") }}</div>
+                                {{ bioform.bloodgroup(class="form-control mb-2", placeholder="A+") }}</div>
+                            <div class="col-md-2">{{ bioform.height.label(class="mb-1 fs-5") }}
+                                {{ bioform.height(class="form-control mb-2", placeholder="in cm") }}</div>
+                            <div class="col-md-2">{{ bioform.weight.label(class="mb-1 fs-5") }}
+                                {{ bioform.weight(class="form-control mb-2", placeholder="in kg") }}</div>
+                        </div>
+                        <div class="row">
                         </div>
                         {{ bioform.allergies.label(class="mb-1 fs-5") }}
                         {{ bioform.allergies(class="form-control mb-2", placeholder="Separate each allergy by a comma (,)")}}
