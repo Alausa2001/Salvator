@@ -35,7 +35,7 @@
             <div class="row l-blue p-2 rounded">
                 <h4>Biodata</h4>
             </div>
-            <div class="row mt-2 justify-content-center">
+            <div class="row mt-2">
                 <form action="" method="POST" class="needs-validation" novalidate>
                     {% if g.user['biodata'].get('alert') %}
                     <div class="form-group mb-3">
@@ -71,8 +71,8 @@
                                 <tr class="fs-5"><td>Firstname</td><td class="text-success text-center">{{g.user['biodata'].get('first_name')}}</td></tr>
                                 <tr class="fs-5"><td>Lastname</td><td class="text-success text-center">{{ g.user['biodata'].get('last_name') }}</td></tr>
                                 <tr class="fs-5"><td>Age</td><td class="text-success text-center">{{ g.user['biodata'].get('age') }}</td></tr>
-                                <tr class="fs-5"><td>Height</td><td class="text-success text-center">{{ g.user['biodata'].get('height') }}</td></tr>
-                                <tr class="fs-5"><td>Weight</td><td class="text-success text-center">{{ g.user['biodata'].get('weight') }}</td></tr>
+                                <tr class="fs-5"><td>Height</td><td class="text-success text-center">{{ g.user['biodata'].get('height') }} cm</td></tr>
+                                <tr class="fs-5"><td>Weight</td><td class="text-success text-center">{{ g.user['biodata'].get('weight') }} kg</td></tr>
                                 <tr class="fs-5"><td>Blood Group</td><td class="text-success text-center">{{ g.user['biodata'].get('blood_group') }}</td></tr>
                                 <tr class="fs-5"><td>Genotype</td><td class="text-success text-center">{{ g.user['biodata'].get('genotype') }}</td></tr>
                                 <tr class="fs-5"><td>Allergies</td><td class="text-success text-center">{{ g.user['biodata'].get('allergies') }}</td></tr>
