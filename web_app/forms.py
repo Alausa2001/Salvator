@@ -1,5 +1,6 @@
 from flask_wtf import FlaskForm, RecaptchaField
-from wtforms import StringField, PasswordField, SubmitField, EmailField, IntegerField, FloatField, TextAreaField, DateTimeLocalField
+from wtforms.fields import DateTimeField
+from wtforms import StringField, PasswordField, SubmitField, EmailField, IntegerField, FloatField, TextAreaField
 from wtforms.validators import Length, DataRequired, Email, EqualTo, NumberRange, InputRequired
 
 
@@ -36,7 +37,7 @@ class BiodataForm(FlaskForm):
 
 class MedicalRecordForm(FlaskForm):
     """ Medical Record Form: A flaskform instance to generate A medical record update form """
-    date = DateTimeLocalField(label='Date', validators=[InputRequired()])
+    date = DateTimeField(label='Date', format="%Y-%m-%dT%H:%M", validators=[InputRequired()])
     diagnosis = TextAreaField(label='Diagnosis', validators=[DataRequired()])
     prescription = TextAreaField(label='Prescription', validators=[DataRequired()])
     submit = SubmitField(label='Update Record')

@@ -61,11 +61,10 @@ def dashboard():
         url = f'http://web-02.feranmi.tech/api/v1/biodata/{username}'
         # Update the database with the biodata
         send_to_database(url=url, data=bio, msg=bio_msg)
-    if g.user['biodata'].get('alert'):
+    if bioform.errors != {} and bioform.is_submitted():
         flash_error(bioform.errors)
     # RECORD UPDATE
     if record.validate_on_submit():
-        print(record.date.data)
         obj = jsonify({
             'date': record.date.data,
             'diagnosis': record.diagnosis.data,
