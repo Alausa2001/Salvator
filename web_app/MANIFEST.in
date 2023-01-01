@@ -1,3 +1,0 @@
-graft web_app/templates/static
-graft web_app/templates
-global-exclude *.pyc
