@@ -1,24 +1,12 @@
+from web_app.auth import load_logged_in_user
 import functools
-from flask import abort, Blueprint, flash, g, redirect, render_template, session, url_for, jsonify
-from web_app.forms import BiodataForm, MedicalRecordForm
+from flask import abort, Blueprint, flash, g, redirect, render_template, session, url_for
+from web_app.forms import BiodataForm
 import requests
 
 
 bg = Blueprint('blog', __name__)
 
-
-def send_to_database(url, data, msg):
-    """ Send data to the url passed """
-    # Update the database with the new data
-    requests.post(url, json=data)
-    flash(msg, 'success')
-    return redirect(url_for('blog.dashboard'))
-
-def flash_error(error_msg):
-    """ Flash the error messages passed as an argument """
-    if error_msg != {}:
-        for field, msg in error_msg.items():
-            flash(f'{field.upper()} : {msg[0]}', category='danger')
 
 def login_required(view):
     """ Decorator to check if user is available or Not"""
@@ -43,9 +31,6 @@ def home():
 def dashboard():
     """ Display user informations """
     bioform = BiodataForm()
-    record = MedicalRecordForm()
-    username = session['username']
-    # BIODATA UPDATE
     if bioform.validate_on_submit():
         bio = {
             'first_name': bioform.firstname.data,
@@ -57,29 +42,17 @@ def dashboard():
             'weight': bioform.weight.data,
             'allergies': bioform.allergies.data
         }
-        bio_msg = f'Your biodata has been successfully updated! 🌟'
-        url = f'http://web-02.feranmi.tech/api/v1/biodata/{username}'
+        username = session['username']
         # Update the database with the biodata
-        send_to_database(url=url, data=bio, msg=bio_msg)
-    if g.user['biodata'].get('alert'):
-        flash_error(bioform.errors)
-    # RECORD UPDATE
-    if record.validate_on_submit():
-        print(record.date.data)
-        obj = jsonify({
-            'date': record.date.data,
-            'diagnosis': record.diagnosis.data,
-            'prescription': record.prescription.data
-        })
-        new_record = obj.json
-        record_msg = f'The new record is added successfully! 🌟'
-        record_url = f'http://web-02.feranmi.tech/api/v1/record/{username}'
-        # Update the database with the new record
-        send_to_database(url=record_url, data=new_record, msg=record_msg)
+        url = f'http://web-02.feranmi.tech/api/v1/biodata/{username}'
+        response = requests.post(url, json=bio)
+        # load_logged_in_user()
+        flash(f'Your biodata has been successfully updated! 🌟', 'success')
         return redirect(url_for('blog.dashboard'))
-    if record.errors != {} and record.is_submitted():
-        flash_error(record.errors)
-    return render_template('blog/dashboard.html', bioform=bioform, record=record)
+    if bioform.errors != {}:
+        for field, msg in bioform.errors.items():
+            flash(f'{field.upper()} : {msg[0]}', category='danger')
+    return render_template('blog/dashboard.html', bioform=bioform)
 
 
 @bg.route('/account', strict_slashes=False)
