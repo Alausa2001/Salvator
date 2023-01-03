@@ -114,7 +114,11 @@
                             {{ record.submit(class='btn btn-primary')}}
                         </div>
                     </div>
-                </form>
+                    <ul class="col-md-8">
+                        <li> {{ value }} </li>
+                    </ul>
+                {% endfor %}
+            {% endif %}
             </div>
         </div>
     </div>
