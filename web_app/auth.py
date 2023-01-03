@@ -104,3 +104,4 @@ def signup():
         for msg in form.errors.values():
             flash(f'There was an error in creating a new user: {msg[0]}', category='danger')
     return render_template('auth/signup.html', form=form)
+
