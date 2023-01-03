@@ -28,8 +28,10 @@ def load_logged_in_user():
         user_data['biodata'] = info.get('biodata')
         if type(record) is list:
             user_data['records'] = record
+            user_data['record_found'] = False
         else:
-            user_data['records'] = None
+            user_data['records'] = record
+            user_data['record_found'] = True
         g.user = user_data
 
 
