@@ -42,12 +42,24 @@ def dashboard():
             'weight': bioform.weight.data,
             'allergies': bioform.allergies.data
         }
-        username = session['username']
-        # Update the database with the biodata
+        bio_msg = f'Your biodata has been successfully updated! 🌟'
         url = f'http://web-02.feranmi.tech/api/v1/biodata/{username}'
-        response = requests.post(url, json=bio)
-        # load_logged_in_user()
-        flash(f'Your biodata has been successfully updated! 🌟', 'success')
+        # Update the database with the biodata
+        send_to_database(url=url, data=bio, msg=bio_msg)
+    if bioform.errors != {} and bioform.is_submitted():
+        flash_error(bioform.errors)
+    # RECORD UPDATE
+    if record.validate_on_submit():
+        obj = jsonify({
+            'date': record.date.data,
+            'diagnosis': record.diagnosis.data,
+            'prescription': record.prescription.data
+        })
+        new_record = obj.json
+        record_msg = f'The new record is added successfully! 🌟'
+        record_url = f'http://web-02.feranmi.tech/api/v1/record/{username}'
+        # Update the database with the new record
+        send_to_database(url=record_url, data=new_record, msg=record_msg)
         return redirect(url_for('blog.dashboard'))
     if bioform.errors != {}:
         for field, msg in bioform.errors.items():

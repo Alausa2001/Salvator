@@ -24,8 +24,12 @@ def load_logged_in_user():
         response = requests.post(url, json=data)
         user_data = {'details': {'username': username, 'email': email}}
         info = response.json()
+        record = info.get('medical_records')
         user_data['biodata'] = info.get('biodata')
-        user_data['records'] = info.get('medical_records')
+        if type(record) is list:
+            user_data['records'] = record
+        else:
+            user_data['records'] = None
         g.user = user_data
 
 
@@ -52,7 +56,7 @@ def login():
                     session['email'] = email
                     session['password'] = pwd
                     flash(f'You are now logged in as {username} 😎', 'success')
-                    return redirect(url_for(f'blog.dashboard'))
+                    return redirect(url_for('blog.dashboard'))
                 else:
                     flash('Your password is incorrect', 'danger')
                     return redirect(url_for('auth.login'))
@@ -87,11 +91,14 @@ def signup():
         if response.status_code == 200:
             msg = response.json()
             if msg == 'User Exists':
-                flash('The username has already been taken. Try a new username', 'danger')
+                flash(
+                    'The username has already been taken. Try a new username', 'danger')
             elif msg == 'Email Exists':
-                flash('The email address has already been taken. Try a new email address', 'danger')
+                flash(
+                    'The email address has already been taken. Try a new email address', 'danger')
         elif response.status_code == 201:
-            flash(f"You have successfully created an account! {form.username.data} 🎉🎉", 'success')
+            flash(
+                f"You have successfully created an account! {form.username.data} 🎉🎉", 'success')
             return redirect(url_for('auth.login'))
     if form.errors != {}:
         for msg in form.errors.values():

@@ -1,6 +1,7 @@
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField, EmailField, IntegerField, FloatField
-from wtforms.validators import Length, DataRequired, Email, EqualTo, NumberRange
+from flask_wtf import FlaskForm, RecaptchaField
+from wtforms.fields import DateTimeField
+from wtforms import StringField, PasswordField, SubmitField, EmailField, IntegerField, FloatField, TextAreaField
+from wtforms.validators import Length, DataRequired, Email, EqualTo, NumberRange, InputRequired
 
 
 class LoginForm(FlaskForm):
@@ -31,3 +32,11 @@ class BiodataForm(FlaskForm):
     genotype = StringField(label='Genotype', validators=[DataRequired()])
     bloodgroup = StringField(label='Blood Group', validators=[DataRequired()])
     submit = SubmitField(label='Update Biodata')
+
+
+class MedicalRecordForm(FlaskForm):
+    """ Medical Record Form: A flaskform instance to generate A medical record update form """
+    date = DateTimeField(label='Date', format="%Y-%m-%dT%H:%M", validators=[InputRequired()])
+    diagnosis = TextAreaField(label='Diagnosis', validators=[DataRequired()])
+    prescription = TextAreaField(label='Prescription', validators=[DataRequired()])
+    submit = SubmitField(label='Update Record')

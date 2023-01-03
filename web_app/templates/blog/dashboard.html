@@ -36,7 +36,7 @@
                 <h4>Biodata</h4>
             </div>
             <div class="row mt-2 trech">
-                <form action="" method="POST" class="needs-validation" novalidate>
+                <form action="" method="POST">
                     {% if g.user['biodata'].get('alert') %}
                     <div class="form-group mb-3">
                         {{ bioform.hidden_tag() }}
@@ -86,12 +86,33 @@
                 <h4>Medical Records</h4>
             </div>
             <div class="row mt-2 trech">
-            {% if g.user['records'].get('alert') %}
-                <p> There should be a form here</p>
-            {% else %}
-                {% for key, value in g.user['records'].items() %}
-                    <div class="h6 col-md-4">
-                       {{ key.upper()}}
+                {% if g.user['records'] %}
+                <table class="table table-hover table-responsive">
+                    <thead><td>DATE/TIME</td><td>DIAGNOSIS</td><td>PRESCRIPTION</td></thead>
+                    {% for record in g.user['records'] %}
+                    <tr><td>{{ record.get('date') }}</td><td>{{ record.get('diagnosis') }}</td><td>{{ record.get('prescription') }}</td></tr>
+                    {% endfor %}
+                </table>
+                <hr>
+                {% endif %}
+                <form action="" method="POST" class="form-group mb-3">
+                    <div class="row mb-3">
+                        {{ record.hidden_tag() }}
+                        <div class="col-md-2">
+                            {{ record.date.label }}
+                            {{ record.date(class='form-control', type="datetime-local") }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ record.diagnosis.label }}
+                            {{ record.diagnosis(class='form-control') }}
+                        </div>
+                        <div class="col-md-4">
+                            {{ record.prescription.label }}
+                            {{ record.prescription(class='form-control') }}
+                        </div>                      
+                        <div class="col-md-2 mt-4">
+                            {{ record.submit(class='btn btn-primary')}}
+                        </div>
                     </div>
                     <ul class="col-md-8">
                         <li> {{ value }} </li>
