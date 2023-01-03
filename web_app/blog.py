@@ -1,11 +1,25 @@
-from web_app.auth import load_logged_in_user
 import functools
-from flask import abort, Blueprint, flash, g, redirect, render_template, session, url_for
-from web_app.forms import BiodataForm
+from flask import abort, Blueprint, flash, g, redirect, render_template, session, url_for, jsonify
+from web_app.forms import BiodataForm, MedicalRecordForm
 import requests
 
 
 bg = Blueprint('blog', __name__)
+
+
+def send_to_database(url, data, msg):
+    """ Send data to the url passed """
+    # Update the database with the new data
+    requests.post(url, json=data)
+    flash(msg, 'success')
+    return redirect(url_for('blog.dashboard'))
+
+
+def flash_error(error_msg):
+    """ Flash the error messages passed as an argument """
+    if error_msg != {}:
+        for field, msg in error_msg.items():
+            flash(f'{field.upper()} : {msg[0]}', category='danger')
 
 
 def login_required(view):
@@ -31,6 +45,9 @@ def home():
 def dashboard():
     """ Display user informations """
     bioform = BiodataForm()
+    record = MedicalRecordForm()
+    username = session['username']
+    # BIODATA UPDATE
     if bioform.validate_on_submit():
         bio = {
             'first_name': bioform.firstname.data,
@@ -61,10 +78,9 @@ def dashboard():
         # Update the database with the new record
         send_to_database(url=record_url, data=new_record, msg=record_msg)
         return redirect(url_for('blog.dashboard'))
-    if bioform.errors != {}:
-        for field, msg in bioform.errors.items():
-            flash(f'{field.upper()} : {msg[0]}', category='danger')
-    return render_template('blog/dashboard.html', bioform=bioform)
+    if record.errors != {} and record.is_submitted():
+        flash_error(record.errors)
+    return render_template('blog/dashboard.html', bioform=bioform, record=record)
 
 
 @bg.route('/account', strict_slashes=False)

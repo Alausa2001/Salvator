@@ -1,4 +1,7 @@
+from dotenv import load_dotenv
 import os
+
+load_dotenv()
 
 
 class Config():
@@ -10,3 +13,5 @@ class Config():
     RECAPTCHA_VERIFY_SERVER = "https://www.google.com/recaptcha/api/siteverify"
     RECAPTCHA_PARAMETERS = {'render': 'explicit'}
     RECAPTCHA_DATA_ATTRS = {'theme': 'light'}
+
+
