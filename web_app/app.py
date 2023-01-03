@@ -1,10 +1,11 @@
+from web_app.config import Config
 from web_app.auth import bp
 from web_app.blog import bg
 from flask import Flask
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '3ff31a6c7ebd7c9773b8de18bc8ddb13'
+app.config.from_object(Config)
 app.register_blueprint(bg)
 app.register_blueprint(bp)
 
