@@ -15,3 +15,4 @@ class UserLogin(BaseModel, Base):
     records = relationship('Records', cascade='all, delete-orphan', backref='user')
     medications = relationship('Medication', cascade='all, delete-orphan', backref='user_meds')
     immunizations = relationship('Immunization', cascade='all, delete-orphan', backref='user_vaccines')
+    tests = relationship('MedicalTest', cascade='all, delete-orphan', backref='user_tests')
