@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from models.basemodel import BaseModel, Base
 import sqlalchemy
-from sqlalchemy.orm import Column, String, foreignKey
+from sqlalchemy import Column, String, ForeignKey
 
 class MedicalTest(BaseModel, Base):
     """contains information about the medical tests of a user"""
