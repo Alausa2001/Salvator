@@ -63,7 +63,7 @@ def dashboard():
         url = f'http://web-02.feranmi.tech/api/v1/biodata/{username}'
         # Update the database with the biodata
         send_to_database(url=url, data=bio, msg=bio_msg)
-    if bioform.errors != {} and bioform.is_submitted():
+    if bioform.errors != {} and not bioform.submit.do_not_call_in_templates:
         flash_error(bioform.errors)
     # RECORD UPDATE
     if record.validate_on_submit():
@@ -78,7 +78,7 @@ def dashboard():
         # Update the database with the new record
         send_to_database(url=record_url, data=new_record, msg=record_msg)
         return redirect(url_for('blog.dashboard'))
-    if record.errors != {} and record.is_submitted():
+    if record.errors != {} and not record.submit.do_not_call_in_templates:
         flash_error(record.errors)
     return render_template('blog/dashboard.html', bioform=bioform, record=record)
 
