@@ -74,7 +74,7 @@ def logout():
     # remove the id from the session if it's there
     session.pop('username', None)
     session.clear()
-    return redirect(url_for('home'))
+    return redirect(url_for('index'))
 
 
 @bp.route('/signup', methods=['GET', 'POST'], strict_slashes=False)
@@ -106,3 +106,7 @@ def signup():
             flash(f'There was an error in creating a new user: {msg[0]}', category='danger')
     return render_template('auth/signup.html', form=form)
 
+@bp.route('/')
+@bp.route('/index', methods=['GET'])
+def index():
+    pass
