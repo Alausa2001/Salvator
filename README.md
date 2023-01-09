@@ -1,9 +1,9 @@
 # Salvator
 ### What is Salvator
 
-If you're like most people, you've probably visited multiple doctors and hospitals throughout your life, each with their own system for storing and managing medical records. But what happens when you need access to those records, and they're not all in one place? That's where medical record storage websites like Salvator come in.
+If you're like most people, you've probably visited multiple doctors and hospitals throughout your life, each with their own system for storing and managing medical records. But what happens when you need access to these records, and they are not all in one place? That is where medical records storage applications like [Salvator](https://web-01.learnforfree.tech) come in.
 
-Salvator is a medical record storage website that provides a central location for all of your important medical information, making it easy to view, update, and share your records with healthcare professionals. With Salvator, you can take control of your healthcare and reduce the risk of misdiagnosis and wrong prescriptions. Simply visit [!Salvator](https://web-01.learnforfree.tech) to get started.
+Salvator is a medical record storage website that provides a central location for all of your important medical information, making it easy to view, update, and share your records with healthcare professionals. With Salvator, you can take control of your healthcare and reduce the risk of misdiagnosis and wrong prescriptions. Simply visit [Salvator](https://web-01.learnforfree.tech) to get started.
 
 # API USAGE
 
