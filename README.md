@@ -7,11 +7,11 @@ If you're like most people, you've probably visited multiple doctors and hospita
 Salvator is a medical record storage website that provides a central location for all of your important medical information, making it easy to view, update, and share your records with healthcare professionals. With Salvator, you can take control of your healthcare and reduce the risk of misdiagnosis and wrong treatments. Simply visit [Salvator](https://web-01.learnforfree.tech) to get started.
 
 ### Context
-This is a collaboration between [Alausa Abdulqoyum](www.github.com/Alausa2001), [Abdullahi Abdulbasit](www.github.com/bibhestee) and [Oguntola Joshua](www.github.com/extranodev) as our portfolio project, concluding our foundations year at [ALX Africa](www.alxafrica.com)
+This is a collaboration between [Alausa Abdulqoyum](https://www.github.com/Alausa2001), [Abdullahi Abdulbasit](https://www.github.com/bibhestee) and [Oguntola Joshua](https://www.github.com/extranodev) as our portfolio project, concluding our foundations year at [ALX Africa](https://www.alxafrica.com)
 
 ## The Team
 
-Abdulqoyum: [Github](www.github.com/Alausa2001)/[Twitter](www.twitter.com/Alausaabdulqoy3)/[LinkedIn](www.linkedin.com/in/abdulqoyum-alausa-382a57239)
+Abdulqoyum: [Github](https://www.github.com/Alausa2001)/[Twitter](https://www.twitter.com/Alausaabdulqoy3)/[LinkedIn](https//www.linkedin.com/in/abdulqoyum-alausa-382a57239)
 
 Joshua: [Github](https://github.com/ExtranoDev)/[Twitter](https://twitter.com/extranodev)/[LinkedIn](https://www.linkedin.com/in/oguntolajoshua/)
 
@@ -21,7 +21,7 @@ Abdulbasit: ...
 
 
 ## Let's take you on a tour
-Visit our website [here](web-01.learnforfree.tech)
+Visit our website [here](http://web-01.learnforfree.tech)
 Here is a little preview
 
 # API USAGE
