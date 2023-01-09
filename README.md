@@ -4,14 +4,14 @@
 
 If you're like most people, you've probably visited multiple doctors and hospitals throughout your life, each with their own system for storing and managing medical records. But what happens when you need access to these records, and they are not all in one place? That is where medical records storage applications like [Salvator](https://web-01.learnforfree.tech) come in.
 
-Salvator is a medical record storage website that provides a central location for all of your important medical information, making it easy to view, update, and share your records with healthcare professionals. With Salvator, you can take control of your healthcare and reduce the risk of misdiagnosis and wrong treatments. Simply visit [Salvator](https://web-01.learnforfree.tech) to get started.
+Salvator is a medical record storage website that provides a central location for all of your important medical information, making it easy to view, update, and share your records with healthcare professionals. With Salvator, you can take control of your healthcare and reduce the risk of misdiagnosis and wrong treatments. Simply visit [Salvator](https://web-01.learnforfree.tech) to get started. To know more about us visit [here](https://jeomade19.wixsite.com/salvator)
 
 ### Context
 This is a collaboration between [Alausa Abdulqoyum](https://github.com/Alausa2001), [Abdullahi Abdulbasit](https://github.com/bibhestee) and [Oguntola Joshua](https://github.com/extranodev) as our portfolio project, concluding our foundations year at [ALX Africa](https://alxafrica.com)
 
 ## The Team
 
-Abdulqoyum: [Github](https://github.com/Alausa2001)/[Twitter](https://twitter.com/Alausaabdulqoy3)/[LinkedIn](https//linkedin.com/in/abdulqoyum-alausa-382a57239)
+Abdulqoyum: [Github](https://github.com/Alausa2001)/[Twitter](https://twitter.com/Alausaabdulqoy3)/[LinkedIn](https//www.linkedin.com/in/abdulqoyum-alausa-382a57239)
 
 Joshua: [Github](https://github.com/ExtranoDev)/[Twitter](https://twitter.com/extranodev)/[LinkedIn](https://www.linkedin.com/in/oguntolajoshua/)
 
@@ -22,6 +22,7 @@ Abdulbasit: ...
 
 ## Let's take you on a tour
 Visit our website [here](http://web-01.learnforfree.tech)
+
 Here is a little preview
 
 # API USAGE
