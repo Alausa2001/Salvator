@@ -46,35 +46,35 @@ class DbStorage:
         self.__session = Session
 
     def new(self, obj):
-        """adds and commit chab=nges to the database"""
+        """adds and commit changes to the database"""
         self.__session.add(obj)
-    
+
     def save(self):
         self.__session.commit()
-    
+
     def delete(self, obj=None):
         """deletes an obj from the db"""
         if obj is not None:
             self.__session.delete(obj)
 
     def get_user(self, username, cls=UserLogin):
-        """returns a user with password"""
+        """returns a user with the specified username"""
         if cls == UserLogin:
-            user = self.__session.query(cls).filter(cls.username == username).first()
+            user = self.__session.query(cls).filter(cls.username == username)
             return user
         return None
 
     def check_email(self, email, cls=UserLogin):
-        """check if a an email is already used by a user"""
+        """checks if an email already exist in a database"""
         if cls == UserLogin:
             user = self.__session.query(cls).filter(cls.email == email).first()
             return user
         return None
-    
+
     def get_user_via_email(self, email, pwd, cls=UserLogin):
-        """return a user with a password"""
+        """return a user with an email and password"""
         if cls == UserLogin:
-            user = self.__session.query(cls).filter(cls.password == pwd, cls.email == email).first()
+            user = self.__session.query(cls).filter(cls.password == pwd, cls.email == email)
             return user
         return None
 
@@ -90,15 +90,14 @@ class DbStorage:
     def get_record(self, records_id, cls):
         """return a user's medical records"""
         if cls is not None:
-            obj = self.__session.query(cls).where(cls.records_id == records_id).first()
+            obj = self.__session.query(cls).where(cls.records_id == records_id)
             if obj:
                 return obj
             return None
         return None
 
-
     def get(self, cls, id):
-        """return and object with a id"""
+        """return an object with an id"""
         if cls is not None:
             obj = self.__session.query(cls).where(cls.id == id).first()
             if obj:
@@ -109,7 +108,7 @@ class DbStorage:
     def close(self):
         """removes a session obj"""
         self.__session.remove()
-    
+
     def all(self, cls=None):
         """gets all the instances of a class in the database
             cls is a string
