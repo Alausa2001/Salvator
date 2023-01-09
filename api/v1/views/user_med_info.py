@@ -5,6 +5,7 @@ from models.login import UserLogin
 from models.user_med_info import UserMedInfo
 from api.v1.views import app_views
 
+
 @app_views.route('/users', methods=['GET'], strict_slashes=False)
 def all_users():
     """returns all users"""
@@ -12,6 +13,7 @@ def all_users():
     for user in storage.all("UserLogin").values():
         users.append(user.to_dict())
     return jsonify(users)
+
 
 @app_views.route('/biodata/<username>', methods=['POST'], strict_slashes=False)
 def input_biodata(username):
@@ -34,6 +36,7 @@ def input_biodata(username):
         biodata.save()
         return make_response(jsonify(biodata.to_dict()), 201)
 
+
 @app_views.route('/biodata/<username>', methods=['GET'], strict_slashes=False)
 def get_biodata(username):
     """gets a user's biodata"""
@@ -45,6 +48,7 @@ def get_biodata(username):
     if not user_biodata:
         return jsonify("Record not found")
     return make_response(jsonify(user_biodata.to_dict()), 200)
+
 
 @app_views.route('/biodata/<username>', methods=['PUT'], strict_slashes=False)
 def update_biodata(username):
@@ -64,7 +68,9 @@ def update_biodata(username):
     user_biodata.save()
     return make_response(jsonify(user_biodata.to_dict()), 200)
 
-@app_views.route('biodata/<username>', methods=['DELETE'], strict_slashes=False)
+
+@app_views.route('biodata/<username>', methods=['DELETE'],
+                 strict_slashes=False)
 def delete_biodata(username):
     """deletes a user's data"""
     user = storage.get_user(username, UserLogin)
