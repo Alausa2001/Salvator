@@ -43,7 +43,19 @@ section {
     height: 400px;
 
 }
-
+@media screen and (max-width: 650px) {
+  #service_content {
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    height: 1600px;
+    margin: 0 auto;
+  }
+  .card {
+    height: 400px;
+    margin-bottom: 20px;
+  }
+}
 
 
 /* Frames  */

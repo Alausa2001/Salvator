@@ -2,6 +2,9 @@
 import models
 from models.basemodel import BaseModel, Base
 from models.login import UserLogin
+from models.medical_tests import MedicalTest
+from models.immunization import Immunization
+from models.medications import Medication
 from models.med_records import Records
 from models.user_med_info import UserMedInfo
 from os import getenv
@@ -119,7 +122,7 @@ class DbStorage:
                 key = '.'.join([obj.__class__.__name__, obj.id])
                 all_obj[key] = obj
         else:
-            clas = [BaseModel, Records, UserMedInfo, UserLogin]
+            clas = [BaseModel, Records, UserMedInfo, UserLogin, MedicalTest, Medication, Immunization]
             for cls in clas:
                 objs = self.session.query(cls).all()
                 for obj in objs:

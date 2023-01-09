@@ -3,6 +3,7 @@
 import cmd
 import sys
 from models.basemodel import BaseModel
+from models.medical_tests import MedicalTest
 from models.__init__ import storage
 from models.user_med_info import UserMedInfo
 from models.med_records import Records
@@ -17,7 +18,7 @@ class HBNBCommand(cmd.Cmd):
 
     classes = {
                'UserMedInfo': UserMedInfo, 'UserLogin': UserLogin, 'BaseModel': BaseModel,
-               'Records' : Records
+               'Records' : Records, 'MedicalTest': MedicalTest
               }
     dot_cmds = ['all', 'count', 'show', 'destroy', 'update']
 
