@@ -1,4 +1,5 @@
-![Salvator Dashboard](https://github.com/Alausa2001/Salvator/blob/main/web_app/static/images/SALVATOR%20-%20Dashboard%20usable.png)
+![Salvator Homepage](https://github.com/Alausa2001/Salvator/blob/main/web_app/static/images/Salvator%20Homepage.jpg)
+
 # Introduction
 ## The Project
 ### What is Salvator
@@ -27,7 +28,7 @@ Visit our website [here](http://web-01.learnforfree.tech)
 
 ### Here is a little preview
 
-
+![Salvator Dashboard](https://github.com/Alausa2001/Salvator/blob/main/web_app/static/images/SALVATOR%20-%20Dashboard%20usable.png)
 
 ## Architecture
 
