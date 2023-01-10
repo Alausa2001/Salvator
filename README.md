@@ -23,21 +23,34 @@ Abdulbasit: ...
 
 coming soon
 
-## Let's take you on a tour
-Visit our website [here](http://web-01.learnforfree.tech)
+## Here is a little preview of our application (Images). Visit our website [here](https://web-01.learnforfree.tech)
 
-### Here is a little preview
+#### The Signup page
 
+![Salvator Signup page](https://github.com/Alausa2001/Salvator/blob/main/web_app/static/images/salvator%20signup%20page.jpg)
+
+#### The Login page
+![Salvator Login page](https://github.com/Alausa2001/Salvator/blob/main/web_app/static/images/salvator%20login%20page.jpg)
+
+#### Biodata form page
+
+![Enter your Biodata](https://github.com/Alausa2001/Salvator/blob/main/web_app/static/images/Salvator%20enter%20biodata%20page.jpg)
+
+#### A user's Dashboard
 ![Salvator Dashboard](https://github.com/Alausa2001/Salvator/blob/main/web_app/static/images/SALVATOR%20-%20Dashboard%20usable.png)
+
+
 
 ## Architecture
 
 coming soon
 
-## New features
+## Future of Salvator
 
-Some are already in progress
-
+* Features to save a user's medical tests and results, immunizations. (In progress)
+* Book an appointment with a doctor.
+* An emergency alert system.
+* Locate nearest hospital.
 
 ## API Documentation
 
