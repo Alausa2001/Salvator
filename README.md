@@ -1,4 +1,4 @@
-![Salvator Dashboard](https://github.com/Alausa2001/Salvator/tree/main/web_app/static/images/SALVATOR - Dashboard usable.png?raw=true)
+![Salvator Dashboard](https://github.com/Alausa2001/Salvator/blob/main/web_app/static/images/SALVATOR%20-%20Dashboard%20usable.png)
 # Introduction
 ## The Project
 ### What is Salvator
