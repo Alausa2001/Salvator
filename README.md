@@ -499,7 +499,7 @@ via email and password
   
   ## License
   
-  MIT License
+  [MIT License](https://github.com/Alausa2001/Salvator/blob/main/LICENSE)
   
   
   
