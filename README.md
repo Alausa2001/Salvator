@@ -19,18 +19,30 @@ Abdulbasit: ...
 
 ## Blog Posts
 
+coming soon
 
 ## Let's take you on a tour
 Visit our website [here](http://web-01.learnforfree.tech)
 
-Here is a little preview
+#### Here is a little preview
 
-# API USAGE
+coming soon
 
-### BASE URL
+## Architecture
+
+coming soon
+
+## New features
+
+Some are already in progress
+
+
+## API Documentation
+
+#### BASE URL
 http://web-02.feranmi.tech/api/v1
 
-### ROUTES
+#### ROUTES
 /register : POST method only
 
 POST    /register : creates a new user (username and password are sent in json format)
@@ -470,7 +482,9 @@ via email and password
 
 ```
   
+  ## License
   
+  MIT License
   
   
   
