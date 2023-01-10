@@ -1,3 +1,4 @@
+![Salvator Dashboard](https://drive.google.com/file/d/1eYxJXZ8LsoRM_Ml8yBgStafqJ2EwgOXe/view?usp=share_link)
 # Introduction
 ## The Project
 ### What is Salvator
@@ -24,9 +25,9 @@ coming soon
 ## Let's take you on a tour
 Visit our website [here](http://web-01.learnforfree.tech)
 
-#### Here is a little preview
+### Here is a little preview
 
-coming soon
+
 
 ## Architecture
 
