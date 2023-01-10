@@ -1,4 +1,4 @@
-![Salvator Dashboard](https://drive.google.com/file/d/1eYxJXZ8LsoRM_Ml8yBgStafqJ2EwgOXe/view?usp=share_link)
+![Salvator Dashboard](https://github.com/Alausa2001/Salvator/tree/main/web_app/static/images/SALVATOR - Dashboard usable.png?raw=true)
 # Introduction
 ## The Project
 ### What is Salvator
