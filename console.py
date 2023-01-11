@@ -3,21 +3,22 @@
 import cmd
 import sys
 from models.basemodel import BaseModel
+from models.medical_tests import MedicalTest
 from models.__init__ import storage
 from models.user_med_info import UserMedInfo
 from models.med_records import Records
 from models.login import UserLogin
 
 
-class HBNBCommand(cmd.Cmd):
+class Salvator(cmd.Cmd):
     """ Contains the functionality for the HBNB console"""
 
     # determines prompt for interactive/non-interactive modes
-    prompt = '(hbnb) ' if sys.__stdin__.isatty() else ''
+    prompt = '(Salvator) ' if sys.__stdin__.isatty() else ''
 
     classes = {
                'UserMedInfo': UserMedInfo, 'UserLogin': UserLogin, 'BaseModel': BaseModel,
-               'Records' : Records
+               'Records' : Records, 'MedicalTest': MedicalTest
               }
     dot_cmds = ['all', 'count', 'show', 'destroy', 'update']
 
@@ -328,4 +329,4 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == "__main__":
-    HBNBCommand().cmdloop()
+    Salvator().cmdloop()

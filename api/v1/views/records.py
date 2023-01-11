@@ -27,6 +27,7 @@ def enter_records(username):
         records.save()
         return make_response(jsonify(records.to_dict()), 201)
 
+
 @app_views.route('/records/<username>', methods=['GET'], strict_slashes=False)
 def retrieve_records(username):
     """get a user's medical records"""
@@ -43,7 +44,8 @@ def retrieve_records(username):
     return jsonify(all_records)
 
 
-@app_views.route('record/<id>/<username>', methods=['GET'], strict_slashes=False)
+@app_views.route('record/<id>/<username>', methods=['GET'],
+                 strict_slashes=False)
 def get_a_record(id, username):
     """get the specified record"""
     user = storage.get_user(username, UserLogin)
@@ -56,7 +58,9 @@ def get_a_record(id, username):
         if record.id == id:
             return jsonify(record.to_dict())
 
-@app_views.route('record/<id>/<username>', methods=['PUT'], strict_slashes=False)
+
+@app_views.route('record/<id>/<username>', methods=['PUT'],
+                 strict_slashes=False)
 def update_records(id, username):
     """update a user's medical records"""
     user = storage.get_user(username, UserLogin)
@@ -74,7 +78,9 @@ def update_records(id, username):
     record.save()
     return make_response(jsonify(record.to_dict()), 200)
 
-@app_views.route('record/<id>/<username>', methods=['DELETE'], strict_slashes=False)
+
+@app_views.route('record/<id>/<username>', methods=['DELETE'],
+                 strict_slashes=False)
 def delete_record(id, username):
     """deletes a user"""
     user = storage.get_user(username, UserLogin)

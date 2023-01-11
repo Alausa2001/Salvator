@@ -37,7 +37,7 @@ Dashboard
             </div>
             <div class="row mt-2 trech">
                 <form action="" method="POST">
-                    {% if g.user['biodata'].get('alert') %}
+                    {% if g.user['biodata'].get('alert', False) %}
                     <div class="form-group mb-3">
                         {{ bioform.hidden_tag() }}
 

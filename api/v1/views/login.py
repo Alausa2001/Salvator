@@ -17,6 +17,8 @@ def register():
     password = content.get('password')
     username = content.get('username')
     email = content.get('email')
+
+    # get a user to check if a username already exists
     user_exists = storage.get_user(username, UserLogin)
     if user_exists:
         return jsonify("User Exists")
@@ -48,6 +50,7 @@ def register():
         # redirect(url_for("app_views.login"))
         pass
 
+
 @app_views.route('/login', methods=['POST'], strict_slashes=False)
 def login():
     """return users details (biodata and medical records), when they login"""
@@ -70,7 +73,7 @@ def login():
     med_id = user.id
     user_biodata = storage.get_biodata(med_id, UserMedInfo)
     if not user_biodata:
-        biodata = {"alert" : "You are yet to fill in your biodata"}
+        biodata = {"alert": "You are yet to fill in your biodata"}
     else:
         biodata = user_biodata.to_dict()
 

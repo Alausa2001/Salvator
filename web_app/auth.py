@@ -54,8 +54,8 @@ def login():
             if username == usr or email == em:
                 if check_password_hash(pwd, password):
                     session.clear()
-                    session['username'] = username
-                    session['email'] = email
+                    session['username'] = usr
+                    session['email'] = em
                     session['password'] = pwd
                     flash(f'You are now logged in as {username} 😎', 'success')
                     return redirect(url_for('blog.dashboard'))
@@ -93,8 +93,7 @@ def signup():
         if response.status_code == 200:
             msg = response.json()
             if msg == 'User Exists':
-                flash(
-                    'The username has already been taken. Try a new username', 'danger')
+                flash('The username has already been taken. Try a new username', 'danger')
             elif msg == 'Email Exists':
                 flash(
                     'The email address has already been taken. Try a new email address', 'danger')
