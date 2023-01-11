@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# mysql backup
-sudo mysqldump -uroot salvator_db -p > backup.sql
-tar -czf $(date +"%d-%m-%Y".tar.gz) backup.sql
-git add .
-git commit -m "database backup"
-git push
