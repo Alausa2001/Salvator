@@ -17,7 +17,7 @@ Abdulqoyum: [Github](https://github.com/Alausa2001)/[Twitter](https://twitter.co
 
 Joshua: [Github](https://github.com/ExtranoDev)/[Twitter](https://twitter.com/extranodev)/[LinkedIn](https://www.linkedin.com/in/oguntolajoshua/)
 
-Abdulbasit: ...
+Abdulbasit: [Github](https://github.com/bibhestee)/[Twitter](http://www.twitter.com/bibest22)/[LinkedIn](https://www.linkedin.com/in/abdulbasit-abdullahi-3a6868223)
 
 ## Blog Posts
 
