@@ -1,13 +1,63 @@
-# Salvator
-Your medical records on the go
+![Salvator Homepage](https://github.com/Alausa2001/Salvator/blob/main/web_app/static/images/Salvator%20Homepage.jpg)
+
+# Introduction
+## The Project
+### What is Salvator
+
+If you're like most people, you've probably visited multiple doctors and hospitals throughout your life, each with their own system for storing and managing medical records. But what happens when you need access to these records, and they are not all in one place? That is where medical records storage applications like [Salvator](https://web-01.learnforfree.tech) come in.
+
+Salvator is a medical record storage website that provides a central location for all of your important medical information, making it easy to view, update, and share your records with healthcare professionals. With Salvator, you can take control of your healthcare and reduce the risk of misdiagnosis and wrong treatments. Simply visit [Salvator](https://web-01.learnforfree.tech) to get started. To know more about us visit [here](https://jeomade19.wixsite.com/salvator)
+
+### Context
+This is a collaboration between [Alausa Abdulqoyum](https://github.com/Alausa2001), [Abdullahi Abdulbasit](https://github.com/bibhestee) and [Oguntola Joshua](https://github.com/extranodev) as our portfolio project, concluding our foundations year at [ALX Africa](https://alxafrica.com)
+
+## The Team
+
+Abdulqoyum: [Github](https://github.com/Alausa2001)/[Twitter](https://twitter.com/Alausaabdulqoy3)/[LinkedIn](https//www.linkedin.com/in/abdulqoyum-alausa-382a57239)
+
+Joshua: [Github](https://github.com/ExtranoDev)/[Twitter](https://twitter.com/extranodev)/[LinkedIn](https://www.linkedin.com/in/oguntolajoshua/)
+
+Abdulbasit: [Github](https://github.com/bibhestee)/[Twitter](http://www.twitter.com/bibest22)/[LinkedIn](https://www.linkedin.com/in/abdulbasit-abdullahi-3a6868223)
+
+## Blog Posts
+
+coming soon
+
+## Here is a little preview of our application (Images). Visit our website [here](https://web-01.learnforfree.tech)
+
+#### The Signup page
+
+![Salvator Signup page](https://github.com/Alausa2001/Salvator/blob/main/web_app/static/images/salvator%20signup%20page.jpg)
+
+#### The Login page
+![Salvator Login page](https://github.com/Alausa2001/Salvator/blob/main/web_app/static/images/salvator%20login%20page.jpg)
+
+#### Biodata form page
+
+![Enter your Biodata](https://github.com/Alausa2001/Salvator/blob/main/web_app/static/images/Salvator%20enter%20biodata%20page.jpg)
+
+#### A user's Dashboard
+![Salvator Dashboard](https://github.com/Alausa2001/Salvator/blob/main/web_app/static/images/SALVATOR%20-%20Dashboard%20usable.png)
 
 
-# API USAGE
 
-### BASE URL
+## Architecture
+
+coming soon
+
+## Future of Salvator
+
+* Features to save a user's medical tests and results, immunizations. (In progress)
+* Book an appointment with a doctor.
+* An emergency alert system.
+* Locate nearest hospital.
+
+## API Documentation
+
+#### BASE URL
 http://web-02.feranmi.tech/api/v1
 
-### ROUTES
+#### ROUTES
 /register : POST method only
 
 POST    /register : creates a new user (username and password are sent in json format)
@@ -447,7 +497,9 @@ via email and password
 
 ```
   
+  ## License
   
+  [MIT License](https://github.com/Alausa2001/Salvator/blob/main/LICENSE)
   
   
   
