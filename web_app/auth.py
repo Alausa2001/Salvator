@@ -3,7 +3,7 @@ from web_app.forms import LoginForm, SignUpForm
 import requests
 from werkzeug.security import check_password_hash, generate_password_hash
 
-bp = Blueprint('auth', __name__, url_prefix='/auth')
+bp = Blueprint('auth', __name__, url_prefix='/Salvator/auth')
 
 
 @bp.before_app_request
@@ -106,4 +106,3 @@ def signup():
         for msg in form.errors.values():
             flash(f'There was an error in creating a new user: {msg[0]}', category='danger')
     return render_template('auth/signup.html', form=form)
-
