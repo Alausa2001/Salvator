@@ -43,7 +43,7 @@ coming soon
 
 ## Architecture
 
-![Salvator Architecture](https://drive.google.com/file/d/1ZRcabx0bGYq5205G-qbD__V27f8uq3rd/view?usp=sharing)
+![Salvator Architecture](https://github.com/Alausa2001/Salvator/blob/main/web_app/static/images/salvator1.png)
 
 ## Future of Salvator
 
